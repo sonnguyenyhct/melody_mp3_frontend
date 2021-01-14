@@ -1,3 +1,8 @@
+import {album} from './album';
+import {User} from './user';
+import {singer} from './singer';
+import {playlist} from './playlist';
+
 export interface song{
   id?: number;
   name?: string;
@@ -6,4 +11,8 @@ export interface song{
   numberOfView?: number;
   author?: string;
   avatar?: string;
+  album?: album;
+  user?: User;
+  singers?: singer[];
+  playlists?: playlist[];
 }
