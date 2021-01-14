@@ -5,7 +5,7 @@ import {playlist} from './playlist';
 
 export interface song{
   id?: number;
-  name?: string;
+  name: string;
   file?: string;
   creationTime?: any;
   numberOfView?: number;
