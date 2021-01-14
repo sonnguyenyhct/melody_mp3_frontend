@@ -32,7 +32,7 @@ import {FormsModule} from '@angular/forms';
     FontAwesomeModule,
     NgbModule,
     NgbCarouselModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

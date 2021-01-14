@@ -14,6 +14,9 @@ export class LoginComponent implements OnInit {
 
   // @ts-ignore
   currentUser: UserToken;
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
   user: User = {
     username: '',
     password: ''
@@ -38,6 +41,11 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(data => {
         this.router.navigate([this.returnUrl]);
+        this.isLoggedIn = true;
+        this.isLoginFailed = false;
+      }, err => {
+        this.isLoginFailed = true;
+        this.errorMessage = err.error.message;
       });
   }
 
