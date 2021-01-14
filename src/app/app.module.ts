@@ -13,6 +13,8 @@ import { HomepageComponent } from './user/homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { ProfileComponent } from './profile/profile.component';
     FontAwesomeModule,
     NgbModule,
     NgbCarouselModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
