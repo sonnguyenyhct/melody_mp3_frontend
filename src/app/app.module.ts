@@ -10,6 +10,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { HomepageComponent } from './user/homepage/homepage.component';
+import { SongComponent } from './song/song.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomepageComponent } from './user/homepage/homepage.component';
     HeaderComponent,
     NavbarComponent,
     SidebarComponent,
-    HomepageComponent
+    HomepageComponent,
+    SongComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,13 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {HomepageComponent} from './user/homepage/homepage.component';
 
 const routes: Routes = [
   {
-    path : '',
-    component : HomepageComponent
+    path: '',
+    component: HomepageComponent
+  }, {
+    path: ''
   }
 ];
 
@@ -13,4 +15,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
