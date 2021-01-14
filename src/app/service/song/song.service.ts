@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {environment} from '../../../environments/environment';
 import {HttpClientModule} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {song} from "../../model/song";
 
 const API_URL = `${environment.apiUrl}`;
 
@@ -13,5 +14,7 @@ export class SongService {
   constructor(private http: HttpClientModule) {
   }
 
-  getSongById(id: number): Observable<any>
+  getSongById(id: number): Observable<song>{
+    return this.http.get<song>(API_URL+``)
+  }
 }
