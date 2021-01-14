@@ -1,0 +1,606 @@
+body {
+  margin: 0 auto;
+  font-family: 'Lora', serif;
+}
+
+* {box-sizing:border-box}
+
+/*.txt-change {
+  font-family: 'Zilla Slab', serif;
+  font-size: 0.75em;
+  color: #6cdff6;
+} */
+
+/*navigation*/
+
+.navigation {
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 950px;
+  text-align: center;
+}
+
+.title {
+
+  height: 50px;
+}
+
+.title p {
+  padding-right: 20px;
+  font-family: 'Alex Brush', cursive;
+  font-size: 2.5em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+/* Images */
+
+.images {
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+}
+
+#image1 {
+  background-image: url('https://farm5.staticflickr.com/4548/38174581174_69ae552af8_h.jpg');
+}
+
+#image2 {
+  background-image: url('https://farm5.staticflickr.com/4546/38003202935_c6d6db1eb6_h.jpg');
+}
+
+#image3 {
+  background-image: url('https://farm5.staticflickr.com/4579/38174581374_26885dcc23_h.jpg');
+}
+
+#image4 {
+  background-image: url('https://farm5.staticflickr.com/4551/38003202815_ab178215af_h.jpg');
+}
+
+#image5 {
+  background-image: url('https://farm5.staticflickr.com/4542/38003202725_0364c69d05_h.jpg');
+}
+
+#image6 {
+  background-image: url('https://farm5.staticflickr.com/4555/38003202895_b7b4953b25_h.jpg');
+}
+
+/* New York images */
+
+#nyImage1 {
+  background-image: url('https://farm5.staticflickr.com/4543/38249763592_55cdbfb027_b.jpg');
+}
+
+#nyImage2 {
+  background-image: url('https://farm5.staticflickr.com/4532/38227002386_fddcc0635b_b.jpg');
+}
+
+#nyImage3 {
+  background-image: url('https://farm5.staticflickr.com/4516/38249763212_e421854ff5_b.jpg');
+}
+
+#nyImage4 {
+  background-image: url('https://farm5.staticflickr.com/4548/38249763102_cd9b76131c_b.jpg');
+}
+
+#nyImage5 {
+  background-image: url('https://farm5.staticflickr.com/4569/38249763472_e094bb0724_b.jpg');
+}
+
+#nyImage6 {
+  background-image: url('https://farm5.staticflickr.com/4516/38249763372_62088964d8_b.jpg');
+}
+
+#nyImage7 {
+  background-image: url('https://farm5.staticflickr.com/4572/38249763302_549c841d66_b.jpg');
+}
+
+#nyImage8 {
+  background-image: url('https://farm5.staticflickr.com/4554/24410720098_a5b71feba6_b.jpg');
+}
+
+/* Vegas Images */
+
+#vegasImage1 {
+  background-image: url('https://farm5.staticflickr.com/4564/37570834404_f45cfe771d_b.jpg');
+}
+
+#vegasImage2 {
+  background-image: url('https://farm5.staticflickr.com/4550/26505905839_5676fbb88b_b.jpg');
+}
+
+#vegasImage3 {
+  background-image: url('https://farm5.staticflickr.com/4557/26505905649_f4081ca482_b.jpg');
+}
+
+#vegasImage4 {
+  background-image: url('https://farm5.staticflickr.com/4564/26505905499_279233b7c4_b.jpg');
+}
+
+#vegasImage5 {
+  background-image: url('https://farm5.staticflickr.com/4534/26505905409_bba92bdc4f_b.jpg');
+}
+
+#vegasImage6 {
+  background-image: url('https://farm5.staticflickr.com/4520/37570834154_63731189e0_b.jpg');
+}
+
+#vegasImage7 {
+  background-image: url('https://farm5.staticflickr.com/4525/37570833794_e2469b66b7_b.jpg');
+}
+
+#vegasImage8 {
+  background-image: url('https://farm5.staticflickr.com/4524/37570834064_6e9d7d5f7d_b.jpg');
+}
+
+#vegasImage9 {
+  background-image: url('https://farm5.staticflickr.com/4530/26505905229_d74565c5f2_b.jpg');
+}
+
+/* Malta */
+
+#maltaImage1 {
+  background-image: url('https://farm5.staticflickr.com/4532/24410675018_ba791c4522_b.jpg');
+}
+
+#maltaImage2 {
+  background-image: url('https://farm5.staticflickr.com/4559/24410674888_16ea0b7ecf_b.jpg');
+}
+
+#maltaImage3 {
+  background-image: url('https://farm5.staticflickr.com/4542/37570814894_1f248f474f_b.jpg');
+}
+
+#maltaImage4 {
+  background-image: url('https://farm5.staticflickr.com/4563/24410674698_79d88de9d3_b.jpg');
+}
+
+#maltaImage5 {
+  background-image: url('https://farm5.staticflickr.com/4585/38281811291_e29df9dc07_b.jpg');
+}
+
+#maltaImage6 {
+  background-image: url('https://farm5.staticflickr.com/4555/38281811171_3afd5a2888_b.jpg');
+}
+
+#maltaImage7 {
+  background-image: url('https://farm5.staticflickr.com/4545/24410675098_f19924b26c_b.jpg');
+}
+
+#maltaImage8 {
+  background-image: url('https://farm5.staticflickr.com/4563/24410674608_0a8a741383_b.jpg');
+}
+
+/* Amsterdam */
+
+#amsterdamImage1 {
+  background-image: url('https://farm5.staticflickr.com/4572/38249600162_2d68824b60_b.jpg');
+}
+
+#amsterdamImage2 {
+  background-image: url('https://farm5.staticflickr.com/4562/38249600322_2551052bf0_b.jpg');
+}
+
+#amsterdamImage3 {
+  background-image: url('https://farm5.staticflickr.com/4525/38281737401_3d344ae6ab_b.jpg');
+}
+
+#amsterdamImage4 {
+  background-image: url('https://farm5.staticflickr.com/4562/38281737441_a54c2883a5_b.jpg');
+}
+
+#amsterdamImage5 {
+  background-image: url('https://farm5.staticflickr.com/4541/38249600442_f8b9d39ef3_b.jpg');
+}
+
+#amsterdamImage6 {
+  background-image: url('https://farm5.staticflickr.com/4536/37570671674_afac19fc17_b.jpg');
+}
+
+#amsterdamImage7 {
+  background-image: url('https://farm5.staticflickr.com/4520/37570671144_60883d500c_b.jpg');
+}
+
+/* Hamburg */
+
+#hamImage1 {
+  background-image: url('https://farm5.staticflickr.com/4518/37570788354_f21fba06f1_b.jpg');
+}
+
+#hamImage2 {
+  background-image: url('https://farm5.staticflickr.com/4537/37570788694_c12c8978d0_b.jpg');
+}
+
+#hamImage3 {
+  background-image: url('https://farm5.staticflickr.com/4528/37570788904_9cedf0cf62_b.jpg');
+}
+
+#hamImage4 {
+  background-image: url('https://farm5.staticflickr.com/4528/38249721602_1dfb84e8a9_b.jpg');
+}
+
+#hamImage5 {
+  background-image: url('https://farm5.staticflickr.com/4553/38249721392_869438a9cc_b.jpg');
+}
+
+#hamImage6 {
+  background-image: url('https://farm5.staticflickr.com/4524/37570788654_c315f9d0b0_b.jpg');
+}
+
+#hamImage7 {
+  background-image: url('https://farm5.staticflickr.com/4559/37570788984_19d9fef4e8_b.jpg');
+}
+
+#hamImage8 {
+  background-image: url('https://farm5.staticflickr.com/4541/37570789154_1357f5cd62_b.jpg');
+}
+
+/* Paris */
+
+/*#parisImage1 {
+  background-image: url('');
+}
+
+#parisImage2 {
+  background-image: url('');
+}
+
+#parisImage3 {
+  background-image: url('');
+}
+
+#parisImage4 {
+  background-image: url('');
+}
+
+#parisImage5 {
+  background-image: url('');
+}
+
+#parisImage6 {
+  background-image: url('');
+}*/
+
+/* location-title*/
+
+.location-title {
+  padding-top: 200px;
+  width: 60%;
+  margin: 0 auto;
+  color: #f7f7f7;
+}
+
+.location-title h2 {
+  text-align: center;
+  font-size: 3.8em;
+  font-family: 'Poiret One', cursive;
+  padding: 0px;
+  margin: 0px;
+  text-shadow: 3px 3px 5px #4b4b4b;
+}
+
+.location-title h4 {
+  text-align: center;
+  font-size: 2em;
+  font-family: 'Alex Brush', cursive;
+  padding: 0px;
+  margin: 0px;
+  text-shadow: 2px 2px 5px #4b4b4b;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot,
+.hamdot,
+.parisdot,
+.amdot,
+.maltadot,
+.vegasdot,
+.nydot {
+  cursor:pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover, .hamdot:hover, .parisdot:hover, .amdot:hover, .maltadot:hover, .vegasdot:hover, .nydot:hover  {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+/* Main Body */
+
+h2 {
+  font-family: 'Alex Brush', cursive;
+  font-size: 3em;
+  margin: 0;
+}
+
+.color-title {
+  color: #07cfef;
+}
+
+.main-body {
+  text-align: center;
+  width: 100%;
+}
+
+.main-body h1 {
+  font-family: 'Alex Brush', cursive;
+  font-size: 5em;
+  margin: 0px;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.main-body h3 {
+  font-family: 'Poiret One', cursive;
+  font-size: 1.8em;
+  margin: 0px;
+  padding: 10px;
+  text-align: center;
+}
+
+.inner-body {
+  max-width: 950px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.inner-body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.15em;
+}
+
+.close-btn {
+  background-color: #2b2b2b;
+  padding: 0;
+  margin: auto;
+  width: 15%;
+  border-radius: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.close {
+  text-align: center;
+  font-size: 1.8em;
+  color: #fff;
+  padding: 10px;
+}
+
+/* places */
+
+
+.places-title {
+  text-align: center;
+  margin: 15px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+.places-title h2 {
+  font-family: 'Alex Brush', cursive;
+  font-size: 3em;
+  margin: 0;
+  padding-bottom: 0px;
+  padding-top: 20px;
+  text-shadow: 2px 2px 2px #2b2b2b;
+}
+
+.places-title h4 {
+  margin: 0;
+  padding-bottom: 20px;
+  text-shadow: 2px 2px 2px #2b2b2b;
+}
+
+/* Places info */
+
+.header-info-image {
+  width: 100%;
+  height: 350px;
+  background-position: center;
+  background-size: cover;
+}
+
+.header-info-image h2 {
+  font-family: 'Alex Brush', cursive;
+  font-size: 4em;
+  margin: 0;
+  padding-bottom: 0px;
+  padding-top: 20px;
+  text-shadow: 2px 2px 2px #2b2b2b;
+  text-align: center;
+  color: #fff;
+}
+
+.header-info-image h4 {
+  margin: 0;
+  padding-bottom: 20px;
+  text-shadow: 2px 2px 2px #2b2b2b;
+  text-align: center;
+  color: #fff;
+}
+
+.places-info {
+  padding: 15px;
+  margin: 15px;
+}
+/*Small slideshow*/
+
+.small-slideshow-container {
+  width: 750px;
+  height: 600px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.small-images {
+  height: 600px;
+  background-position: center;
+  background-size: cover;
+}
+
+/* media qieries */
+
+@media screen and (max-width: 750px) {
+  .small-slideshow-container {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .small-images {
+    height: 400px;
+  }
+
+  .close-btn {
+    background-color: #2b2b2b;
+    padding: 0;
+    margin: auto;
+    width: 30%;
+    border-radius: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .close {
+    text-align: center;
+    font-size: 1.5em;
+    color: #fff;
+    padding: 10px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  .small-slideshow-container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .small-images {
+    height: 300px;
+  }
+
+}
+.slick-prev:before,
+.slick-next:before {
+  color: #000 !important;
+}
+
+.slider p {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 100px;
+  color: #666;
+  margin: 10px;
+  text-align: center;
+  background-color: #e0e0e0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons .button {
+  margin: 8px;
+  border: 1px solid #000;
+  color: #000;
+  padding: 8px;
+  text-align: center;
+  width: 8em;
+  transition: all 300ms ease;
+}
+
+.buttons .button:hover {
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  transition: all 300ms ease;
+}
