@@ -3,6 +3,7 @@ import {environment} from '../../../environments/environment';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {UserToken} from '../../model/user-token';
 import {HttpClient} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 
 const API_URL = `${environment.apiUrl}`;
 @Injectable({
