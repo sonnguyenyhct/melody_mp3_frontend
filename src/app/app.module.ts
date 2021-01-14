@@ -33,7 +33,6 @@ import {FormsModule} from '@angular/forms';
     NgbModule,
     NgbCarouselModule,
     HttpClientModule,
-    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
