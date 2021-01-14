@@ -1,1 +1,14 @@
-<p>song works!</p>
+<app-header></app-header>
+<div class="container">
+  <div class="col">
+    <ngx-audio-player [autoPlay]="false"
+                      [displayPlaylist]="false"
+                      [displayTitle]="false"
+                      [displayVolumeControls]="true"
+                      [disablePositionSlider]="false"
+                      [displayDuration]="true" [expanded]="true"
+                      [pageSizeOptions]="[2, 4, 6]" [playlist]="singleTrack">
+    </ngx-audio-player>
+  </div>
+</div>
+<app-footer></app-footer>

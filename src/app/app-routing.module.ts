@@ -5,7 +5,6 @@ import {AuthGuard} from './helper/auth-guard';
 import {LoginComponent} from './login/login.component';
 import {ProfileComponent} from './profile/profile.component';
 import {RegisterComponent} from './register/register.component';
-
 const routes: Routes = [
   {
     path : '',
@@ -25,7 +24,6 @@ const routes: Routes = [
     component : RegisterComponent
   }
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
