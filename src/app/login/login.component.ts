@@ -12,6 +12,7 @@ import {AuthService} from '../service/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  // @ts-ignore
   currentUser: UserToken;
   user: User = {
     username: '',
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   login(){
+    // @ts-ignore
     this.authService.login( this.user.username, this.user.password)
       .pipe(first())
       .subscribe(data => {
