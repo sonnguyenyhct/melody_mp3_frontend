@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../service/auth/auth.service';
-import {Userdetail} from '../model/userdetail';
+import {userdetail} from '../model/userdetail';
 import {UserdetailService} from '../service/userdetail/userdetail.service';
 import {ActivatedRoute} from '@angular/router';
 
@@ -14,7 +14,7 @@ import {ActivatedRoute} from '@angular/router';
 export class ProfileComponent implements OnInit {
   isUserLogin = false;
   currentUser : any;
-  userDetail : Userdetail = {};
+  userDetail : userdetail = {};
   username : any;
 
   constructor(private authService : AuthService, private userDetailService : UserdetailService,private activatedRoute: ActivatedRoute) {

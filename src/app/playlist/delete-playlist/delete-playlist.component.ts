@@ -10,7 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class DeletePlaylistComponent implements OnInit {
   playlist: Playlist = {};
-  id: number;
+  id: number | undefined;
 
   constructor(private playlistService: PlaylistService,
               private activatedRoute: ActivatedRoute,
@@ -22,13 +22,13 @@ export class DeletePlaylistComponent implements OnInit {
       this.getPlayList(this.id);
     });
   }
-  getPlayList(id){
+  getPlayList(id: number){
     this.playlistService.getPlayListById(id).subscribe(value => {
       this.playlist = value;
     });
   }
 
-  deletePlayList(id){
+  deletePlayList(id: number){
     this.playlistService.deletePlayListById(id).subscribe(() => {
         alert('Successfully');
         this.router.navigate(['/list-playlist']);

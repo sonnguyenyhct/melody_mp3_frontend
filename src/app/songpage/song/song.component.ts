@@ -24,7 +24,7 @@ export class SongComponent implements OnInit {
     singers: []
   };
   listTop10Songs: song[] = [];
-  id: number;
+  id: number | undefined;
   lyric = "Yêu nhau bấy lâu\n" +
     "Sao cô gái ây chỉ mang toàn những lời đớn đau\n" +
     "Bao nhiêu câu hát dưới mưa ngồi chờ em đón đưa\n" +
@@ -87,6 +87,7 @@ export class SongComponent implements OnInit {
   constructor(private songService: SongService,
               private activatedRoute: ActivatedRoute) {
     this.activatedRoute.paramMap.subscribe(paramMap => {
+      // @ts-ignore
       this.id = +paramMap.get('id');
       this.getTrackById(this.id);
     });
@@ -97,7 +98,7 @@ export class SongComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-  getTrackById(id) {
+  getTrackById(id: number) {
     this.songService.getSongById(id).subscribe(value => {
       this.singleTrack[0].title = value.name;
       this.singleTrack[0].link = value.file;
