@@ -14,8 +14,8 @@ import {RegisterComponent} from './register/register.component';
 import {ProfileComponent} from './profile/profile.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-import {NgxAudioPlayerModule} from "ngx-audio-player";
-import {SongComponent} from "./songpage/song/song.component";
+import {NgxAudioPlayerModule} from 'ngx-audio-player';
+import {SongComponent} from './songpage/song/song.component';
 
 @NgModule({
   declarations: [
