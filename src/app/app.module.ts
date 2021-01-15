@@ -17,6 +17,9 @@ import {FormsModule} from '@angular/forms';
 import {NgxAudioPlayerModule} from 'ngx-audio-player';
 import {SongComponent} from './songpage/song/song.component';
 import { CreatePlaylistComponent } from './playlist/create-playlist/create-playlist.component';
+import { ListPlaylistComponent } from './playlist/list-playlist/list-playlist.component';
+import { UpdatePlaylistComponent } from './playlist/update-playlist/update-playlist.component';
+import { DeletePlaylistComponent } from './playlist/delete-playlist/delete-playlist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,10 @@ import { CreatePlaylistComponent } from './playlist/create-playlist/create-playl
     RegisterComponent,
     ProfileComponent,
     SongComponent,
-    CreatePlaylistComponent
+    CreatePlaylistComponent,
+    ListPlaylistComponent,
+    UpdatePlaylistComponent,
+    DeletePlaylistComponent
   ],
   imports: [
     BrowserModule,

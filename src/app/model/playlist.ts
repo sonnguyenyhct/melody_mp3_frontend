@@ -1,7 +1,7 @@
 import {song} from './song';
 import {User} from './user';
 
-export interface playlist{
+export interface Playlist{
   id?: number;
   name?: string;
   creationTime?: any;
