@@ -16,6 +16,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {NgxAudioPlayerModule} from 'ngx-audio-player';
 import {SongComponent} from './songpage/song/song.component';
+import { CreatePlaylistComponent } from './playlist/create-playlist/create-playlist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import {SongComponent} from './songpage/song/song.component';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    SongComponent
+    SongComponent,
+    CreatePlaylistComponent
   ],
   imports: [
     BrowserModule,
