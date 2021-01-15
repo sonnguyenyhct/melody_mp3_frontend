@@ -23,11 +23,12 @@ export class SongComponent implements OnInit {
     file: '',
     singers: []
   };
-  id: number;
+  id: number | undefined;
 
   constructor(private songService: SongService,
               private activatedRoute: ActivatedRoute) {
     this.activatedRoute.paramMap.subscribe(paramMap => {
+      // @ts-ignore
       this.id = +paramMap.get('id');
       this.getTrackById(this.id);
     });
@@ -36,7 +37,8 @@ export class SongComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getTrackById(id) {
+  // tslint:disable-next-line:typedef
+  getTrackById(id: number) {
     this.songService.getSongById(id).subscribe(value => {
       this.singleTrack[0].title = value.name;
       this.singleTrack[0].link = value.file;

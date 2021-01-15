@@ -11,7 +11,7 @@ const API_URL = `${environment.apiUrl}`;
 })
 export class AuthService {
   update = new EventEmitter<string>();
-  private currentUserSubject: BehaviorSubject<UserToken>;
+  public currentUserSubject: BehaviorSubject<UserToken>;
   public currentUser: Observable<UserToken>;
 
   constructor(private http: HttpClient) {

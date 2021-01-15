@@ -11,7 +11,7 @@ const routes: Routes = [
     component : HomepageComponent
   },
   {
-    path : 'profile',
+    path : 'profile/:username',
     component: ProfileComponent,
     canActivate : [AuthGuard]
   },
@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path : 'register',
     component : RegisterComponent
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
 @NgModule({

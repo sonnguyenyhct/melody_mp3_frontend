@@ -1,10 +1,10 @@
-import {guest} from './guest';
+import {Userdetail} from './userdetail';
 import {song} from './song';
 
 export interface playlist{
   id?: number;
   name?: string;
   creationTime?: any;
-  guest?: guest;
+  guest?: Userdetail;
   songs?: song[];
 }

@@ -1,7 +1,7 @@
 import {User} from './user';
 
 // tslint:disable-next-line:class-name
-export interface guest{
+export interface Userdetail{
   id?: number;
   name?: string;
   address?: string;

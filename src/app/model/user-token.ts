@@ -1,4 +1,4 @@
-import {guest} from './guest';
+import {Userdetail} from './userdetail';
 
 export interface UserToken {
   id?: number;
