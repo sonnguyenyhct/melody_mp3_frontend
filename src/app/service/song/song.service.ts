@@ -15,10 +15,14 @@ export class SongService {
   }
 
   getSongById(id: number): Observable<song> {
-    return this.http.get<song>(API_URL + `/song/${id}`);
+    return this.http.get<song>(API_URL + `/songs/${id}`);
   }
 
   get10SongInTopViews(): Observable<song[]> {
-    return this.http.get<song[]>(API_URL + `/song/top10views`);
+    return this.http.get<song[]>(API_URL + `/songs/top10views`);
+  }
+
+  findAllByNameContains(keyword: string): Observable<song[]> {
+    return this.http.get<song[]>(API_URL + `/songs/search/${keyword}`);
   }
 }
