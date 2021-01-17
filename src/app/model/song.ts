@@ -13,6 +13,7 @@ export interface song {
   avatar?: string;
   album?: album;
   user?: User;
+  lyric?: string;
   singers: singer[];
   playlists?: Playlist[];
 }
