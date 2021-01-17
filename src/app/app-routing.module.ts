@@ -8,6 +8,7 @@ import {RegisterComponent} from './register/register.component';
 import {SongComponent} from './songpage/song/song.component';
 import {CreatePlaylistComponent} from './playlist/create-playlist/create-playlist.component';
 import {ListPlaylistComponent} from './playlist/list-playlist/list-playlist.component';
+import {SearchSongComponent} from "./songpage/search-song/search-song.component";
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   }, {
     path: 'list-playlist',
     component: ListPlaylistComponent
+  },
+  {
+    path: 'search/:keyword',
+    component: SearchSongComponent
   }
 ];
 
