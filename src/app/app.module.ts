@@ -21,7 +21,7 @@ import { CreatePlaylistComponent } from './playlist/create-playlist/create-playl
 import { ListPlaylistComponent } from './playlist/list-playlist/list-playlist.component';
 import { UpdatePlaylistComponent } from './playlist/update-playlist/update-playlist.component';
 import { DeletePlaylistComponent } from './playlist/delete-playlist/delete-playlist.component';
-
+import { SearchSongComponent } from './songpage/search-song/search-song.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +39,7 @@ import { DeletePlaylistComponent } from './playlist/delete-playlist/delete-playl
     ListPlaylistComponent,
     UpdatePlaylistComponent,
     DeletePlaylistComponent,
-    ProfileComponent
+    SearchSongComponent
   ],
   imports: [
     BrowserModule,
