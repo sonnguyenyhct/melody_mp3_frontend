@@ -8,6 +8,7 @@ import {RegisterComponent} from './register/register.component';
 import {SongComponent} from './songpage/song/song.component';
 import {CreatePlaylistComponent} from './playlist/create-playlist/create-playlist.component';
 import {ListPlaylistComponent} from './playlist/list-playlist/list-playlist.component';
+import {CreatesongComponent} from './createsong/createsong.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,16 @@ const routes: Routes = [
   {
     path: 'profile/:{username}',
     component: ProfileComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'createsong/:{username}',
+    component: CreatesongComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'createsinger/:{username}',
+    component: CreatesongComponent,
     canActivate: [AuthGuard]
   },
   {

@@ -14,13 +14,19 @@ import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {ProfileComponent} from './profile/profile.component';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxAudioPlayerModule} from 'ngx-audio-player';
 import {SongComponent} from './songpage/song/song.component';
 import { CreatePlaylistComponent } from './playlist/create-playlist/create-playlist.component';
 import { ListPlaylistComponent } from './playlist/list-playlist/list-playlist.component';
 import { UpdatePlaylistComponent } from './playlist/update-playlist/update-playlist.component';
 import { DeletePlaylistComponent } from './playlist/delete-playlist/delete-playlist.component';
+import {environment} from '../environments/environment';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import { CreatesongComponent } from './createsong/createsong.component';
+import { CreatesingerComponent } from './createsinger/createsinger.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +45,9 @@ import { DeletePlaylistComponent } from './playlist/delete-playlist/delete-playl
     ListPlaylistComponent,
     UpdatePlaylistComponent,
     DeletePlaylistComponent,
-    ProfileComponent
+    ProfileComponent,
+    CreatesongComponent,
+    CreatesingerComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +57,11 @@ import { DeletePlaylistComponent } from './playlist/delete-playlist/delete-playl
     NgbCarouselModule,
     NgxAudioPlayerModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

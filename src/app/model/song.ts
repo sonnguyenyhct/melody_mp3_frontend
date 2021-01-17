@@ -11,6 +11,7 @@ export interface song {
   numberOfView?: number;
   author?: string;
   avatar?: string;
+  lyric?: string;
   album?: album;
   user?: User;
   singers: singer[];
