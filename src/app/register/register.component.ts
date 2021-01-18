@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {userdetail} from '../model/userdetail';
+import {UserdetailService} from '../service/userdetail/userdetail.service';
+import {User} from '../model/user';
+import {Router} from '@angular/router';
+import {Customer} from '../model/customer';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +12,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  customer: Customer ={};
+
+  constructor(private userdetailservice: UserdetailService, private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  // tslint:disable-next-line:typedef
+  register(){
+     this.userdetailservice.createNewCustomer(this.customer).subscribe(() =>{
+       this.router.navigate(["/login"]);
+     })
+  }
+
 
 }
