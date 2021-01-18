@@ -43,7 +43,8 @@
                       </div>
                       <tr>
                         <td><label for="avatar"></label></td>
-                        <td><input type="file" [(ngModel)]="song.avatar" name="avatar" id="avatar" (change)="showPreview($event)"></td>
+                        <td><input type="file" [(ngModel)]="song.avatar" name="avatar" id="avatar" (change)="showPreview($event)" #fileUploader></td>
+                        <img [src] = "song.avatar" style="width: 150px; height: auto" alt="Anh dai dien" (click)="fileUploader.click()" >
                       </tr>
                     </div>
                     <div class="row" style="margin-bottom: 25px">
@@ -62,12 +63,12 @@
                     <div class="row" style="margin-top: 50px">
                       <div class="col-md-3">
                         <div class="row">
-                          <button type="submit" class="profile-edit-btn" name="btnAddMore">Thêm bài hát</button>
+                          <button type="submit" class="profile-edit-btn" name="btnAddMore">Sửa bài hát</button>
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="row">
-                          <button type="submit" (click)="cancel()" class="profile-edit-btn" name="btnAddMore">Huỷ bỏ</button>
+                          <button type="submit" (click)="cancel()" class="profile-edit-btn" name="btnAddMore">Quay lại list</button>
                         </div>
                       </div>
                     </div>

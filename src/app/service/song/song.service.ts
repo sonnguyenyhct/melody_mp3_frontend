@@ -24,7 +24,7 @@ export class SongService {
   }
 
   getSongById(id: number): Observable<song> {
-    return this.http.get<song>(API_URL + `/song/${id}`);
+    return this.http.get<song>(API_URL + `/songs/${id}`);
   }
   createSong(song : song, username : String): Observable<song>{
     console.log(username)
