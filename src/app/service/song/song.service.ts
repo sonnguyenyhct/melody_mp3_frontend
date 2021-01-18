@@ -38,13 +38,15 @@ export class SongService {
   findAllByNameContains(keyword: string): Observable<song[]> {
     return this.http.get<song[]>(API_URL + `/search/${keyword}`);
   }
+
   getAllSong(username : String): Observable<song[]>{
     return this.http.get<song[]>(API_URL + `/listsong/${username}`)
   }
   editSong(username : String, id : number, song : song): Observable<song>{
     return this.http.put<song>(API_URL + `/editsong/${username}/${id}`,song);
   }
-  deleteSong(id : number, username : String): Observable<song>{
-    return this.http.delete<song>(API_URL + `/listsong/${username}/${id}`);
+
+  getLatest(): Observable<song[]>{
+    return this.http.get<song[]>(API_URL + `/songs/latestSongs`);
   }
 }

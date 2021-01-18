@@ -30,6 +30,7 @@ import { ListsongComponent } from './song/listsong/listsong.component';
 import {EditsongComponent} from './song/editsong/editsong.component';
 import { DeletesongComponent } from './song/deletesong/deletesong.component';
 import {SearchSongComponent} from './songpage/search-song/search-song.component';
+import {NewSongsComponent} from './songpage/new-songs/new-songs.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {SearchSongComponent} from './songpage/search-song/search-song.component'
     ListsongComponent,
     EditsongComponent,
     DeletesongComponent,
-    SearchSongComponent
+    SearchSongComponent,
+    NewSongsComponent
   ],
   imports: [
     BrowserModule,
