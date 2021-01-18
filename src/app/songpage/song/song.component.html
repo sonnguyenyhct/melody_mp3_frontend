@@ -15,7 +15,7 @@
     </table>
     <table width="750px" bgcolor="#6495ed">
       <tr>
-        <td width="40%"><img width="100%" [src]="song.avatar"></td>
+        <td width="40%"><img width="200px" height="200px" [src]="song.avatar"></td>
         <td>
           <center>{{song.name}}
             <br/>
@@ -54,7 +54,7 @@
       </tr>
       <tr>
         <td>
-          <pre style="display: inline;font-size: 13px; font-family: Helvetica, Arial, sans-serif">{{lyric}}</pre>
+          <pre style="display: inline;font-size: 13px; font-family: Helvetica, Arial, sans-serif">{{song.lyric}}</pre>
         </td>
       </tr>
     </table>
@@ -76,7 +76,7 @@
           <td>
             <div class="tooltipp">
               <div class="a">
-                <a href="#"><span style="font-size: 14px;color: black" class="overflow"
+                <a [routerLink]="['/song/'+play.id]"><span style="font-size: 14px;color: black" class="overflow"
                                   title="{{play.name}} - {{play.author}}">{{play.name}}</span></a>
               </div>
             </div>

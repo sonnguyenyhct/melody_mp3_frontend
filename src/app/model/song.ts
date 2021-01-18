@@ -5,14 +5,15 @@ import {Playlist} from './playlist';
 
 export interface song {
   id?: number;
-  name: string;
-  file: string;
+  name?: string;
+  file?: string;
   creationTime?: any;
   numberOfView?: number;
   author?: string;
   avatar?: string;
+  lyric?: string;
   album?: album;
   user?: User;
-  singers: singer[];
+  singers?: singer[];
   playlists?: Playlist[];
 }

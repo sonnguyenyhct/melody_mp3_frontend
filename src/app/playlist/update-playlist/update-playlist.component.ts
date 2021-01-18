@@ -15,6 +15,7 @@ export class UpdatePlaylistComponent implements OnInit {
   constructor(private playlistService: PlaylistService,
               private activatedRoute: ActivatedRoute) {
     this.activatedRoute.paramMap.subscribe(paramMap => {
+      // @ts-ignore
       this.id = +paramMap.get('id');
       this.getPlayList(this.id);
     });
