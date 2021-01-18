@@ -23,7 +23,7 @@ export class SongComponent implements OnInit {
     file: '',
     singers: []
   };
-  id: number;
+  id: number | undefined;
 
   constructor(private songService: SongService,
               private activatedRoute: ActivatedRoute) {

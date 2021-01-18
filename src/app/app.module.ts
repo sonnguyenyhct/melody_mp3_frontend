@@ -13,9 +13,12 @@ import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {ProfileComponent} from './profile/profile.component';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxAudioPlayerModule} from 'ngx-audio-player';
 import {SongComponent} from './songpage/song/song.component';
+import { CreateSongComponent } from './songpage/create-song/create-song.component';
+import {CommonModule} from '@angular/common';
+import { NewSongsComponent } from './songpage/new-songs/new-songs.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,9 @@ import {SongComponent} from './songpage/song/song.component';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    SongComponent
+    SongComponent,
+    CreateSongComponent,
+    NewSongsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,7 @@ import {SongComponent} from './songpage/song/song.component';
     NgbCarouselModule,
     HttpClientModule,
     NgxAudioPlayerModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
