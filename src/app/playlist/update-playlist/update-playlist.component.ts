@@ -10,7 +10,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class UpdatePlaylistComponent implements OnInit {
   playlist: Playlist = {};
-  id: number;
+  id: number | undefined;
 
   constructor(private playlistService: PlaylistService,
               private activatedRoute: ActivatedRoute) {
@@ -23,12 +23,12 @@ export class UpdatePlaylistComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getPlayList(id){
+  getPlayList(id: number){
     this.playlistService.getPlayListById(id).subscribe(value => {
       this.playlist = value;
     });
   }
-  updatePlayList(id) {
+  updatePlayList(id: number) {
     this.playlistService.updatePlayList(id, this.playlist).subscribe(() => {
       console.log('Successfully');
     }, () => {

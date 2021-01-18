@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
     password: ''
   };
   returnUrl = '';
+  url ='/profile/' + this.user.username;
 
   constructor( private router: Router,
                private activatedRoute: ActivatedRoute,
@@ -40,7 +41,7 @@ export class LoginComponent implements OnInit {
     this.authService.login( this.user.username, this.user.password)
       .pipe(first())
       .subscribe(data => {
-        this.router.navigate([this.returnUrl]);
+        this.router.navigate([this.url]);
         this.isLoggedIn = true;
         this.isLoginFailed = false;
       }, err => {

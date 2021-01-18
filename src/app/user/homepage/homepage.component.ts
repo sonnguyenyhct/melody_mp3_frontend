@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
 declare var $: any;
+
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -7,13 +9,25 @@ declare var $: any;
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
-    $('.multiple-items').slick({
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 3
+    $(document).ready(() => {
+      $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav'
+      });
+      $('.slider-nav').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        dots: true,
+        focusOnSelect: true
+      });
     });
   }
 
