@@ -14,13 +14,23 @@ import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {ProfileComponent} from './profile/profile.component';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxAudioPlayerModule} from 'ngx-audio-player';
 import {SongComponent} from './songpage/song/song.component';
-import { CreatePlaylistComponent } from './playlist/create-playlist/create-playlist.component';
+import {CreatePlaylistComponent} from './playlist/create-playlist/create-playlist.component';
 import { ListPlaylistComponent } from './playlist/list-playlist/list-playlist.component';
 import { UpdatePlaylistComponent } from './playlist/update-playlist/update-playlist.component';
 import { DeletePlaylistComponent } from './playlist/delete-playlist/delete-playlist.component';
+import {environment} from '../environments/environment';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import { CreatesongComponent } from './song/createsong/createsong.component';
+import { CreatesingerComponent } from './createsinger/createsinger.component';
+import { ListsongComponent } from './song/listsong/listsong.component';
+import { EditsongComponent } from './song/editsong/editsong.component';
+import { DeletesongComponent } from './song/deletesong/deletesong.component';
+import {SearchSongComponent} from './songpage/search-song/search-song.component';
 import {NewSongsComponent} from './songpage/new-songs/new-songs.component';
 
 @NgModule({
@@ -41,6 +51,12 @@ import {NewSongsComponent} from './songpage/new-songs/new-songs.component';
     UpdatePlaylistComponent,
     DeletePlaylistComponent,
     ProfileComponent,
+    CreatesongComponent,
+    CreatesingerComponent,
+    ListsongComponent,
+    EditsongComponent,
+    DeletesongComponent,
+    SearchSongComponent,
     NewSongsComponent
   ],
   imports: [
@@ -51,7 +67,11 @@ import {NewSongsComponent} from './songpage/new-songs/new-songs.component';
     NgbCarouselModule,
     NgxAudioPlayerModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../service/auth/auth.service';
 import {Router} from '@angular/router';
+import {UserdetailService} from '../../service/userdetail/userdetail.service';
+import {userdetail} from '../../model/userdetail';
 
 @Component({
   selector: 'app-header',
@@ -11,17 +13,25 @@ export class HeaderComponent implements OnInit {
 
   isUserLogin = false;
   currentUser : any;
+  userDetail : userdetail = {};
+  imgSrc: any;
+  keyword: string | null;
 
-  constructor(private authService : AuthService, private route : Router) {
+  constructor(private userDetailService : UserdetailService, private authService : AuthService, private route : Router) {
+
+  }
+
+  ngOnInit(): void {
     this.authService.currentUserSubject.subscribe(value => {
       this.currentUser = value;
       if(this.currentUser){
         this.isUserLogin = true;
+        this.userDetailService.getUserDetailByUserName(this.currentUser.username).subscribe(value1 => {
+          this.userDetail = value1;
+          this.imgSrc = this.userDetail.avatar;
+        })
       }
     })
-  }
-
-  ngOnInit(): void {
   }
 
   logout(){
@@ -30,5 +40,7 @@ export class HeaderComponent implements OnInit {
   showProfile(){
     this.route.navigate(["/profile/" + this.currentUser.username]);
   }
-
+  searchSong() {
+    this.route.navigate(['/search/' + this.keyword]);
+  }
 }
