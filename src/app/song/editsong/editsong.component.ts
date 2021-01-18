@@ -5,6 +5,8 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {AuthService} from '../../service/auth/auth.service';
 import {finalize} from 'rxjs/operators';
 import {AngularFireStorage} from '@angular/fire/storage';
+import {UserdetailService} from '../../service/userdetail/userdetail.service';
+import {userdetail} from '../../model/userdetail';
 
 @Component({
   selector: 'app-editsong',
@@ -17,10 +19,10 @@ export class EditsongComponent implements OnInit {
   currentUser: any;
   editSuccess = false;
   selectedImage: any = null;
-  imgSrc: string = '';
   username: any;
+  userDetail : userdetail = {};
 
-  constructor(private storage: AngularFireStorage, private authService: AuthService, private songService: SongService, private activatedRoute: ActivatedRoute, private  route: Router) {
+  constructor(private storage: AngularFireStorage, private authService: AuthService, private songService: SongService, private activatedRoute: ActivatedRoute, private  route: Router,private userDetailService : UserdetailService) {
     this.authService.currentUserSubject.subscribe(value => {
       this.currentUser = value;
     });
@@ -28,13 +30,15 @@ export class EditsongComponent implements OnInit {
 
   ngOnInit(): void {
     this.editSuccess = false;
-    this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
-      // this.id = +paramMap.get('id');
-      console.log(paramMap.get('id'));
+    this.activatedRoute.paramMap.subscribe(async paramMap => {
+       // @ts-ignore
+      this.id = +paramMap.get('id');
+      await this.songService.getSongById(this.id).subscribe(song => {
+        this.song = song;
+        console.log(song.name)
+      });
     });
-    this.songService.getSongById(this.id).subscribe(song => {
-      this.song = song;
-    });
+
   }
 
   editSong(id: number) {
@@ -44,7 +48,7 @@ export class EditsongComponent implements OnInit {
   }
 
   cancel() {
-    this.route.navigate(['/profile/' + this.currentUser.username]);
+    this.route.navigate(['/listsong/' + this.currentUser.username]);
   }
 
   // tslint:disable-next-line:typedef
@@ -53,6 +57,7 @@ export class EditsongComponent implements OnInit {
       const reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
       this.selectedImage = event.target.files[0];
+      this.submit();
     } else {
       this.selectedImage = null;
     }
@@ -65,7 +70,6 @@ export class EditsongComponent implements OnInit {
       finalize(() => {
         fileRef.getDownloadURL().subscribe(async url => { // Lay duong dan tren anh
           this.song.avatar = url;
-          await this.editSong(this.id);
         });
       })
     ).subscribe();
