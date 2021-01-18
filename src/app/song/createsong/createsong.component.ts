@@ -89,7 +89,7 @@ export class CreatesongComponent implements OnInit {
     }
   }
   cancel(){
-    this.route.navigate(["/profile/" + this.currentUser.username]);
+    this.route.navigate(["/listsong/" + this.currentUser.username]);
   }
 
 }
