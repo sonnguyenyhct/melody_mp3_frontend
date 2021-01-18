@@ -32,7 +32,11 @@ export class SongService {
   }
 
   get10SongInTopViews(): Observable<song[]> {
-    return this.http.get<song[]>(API_URL + `/song/top10views`);
+    return this.http.get<song[]>(API_URL + `/top10views`);
+  }
+
+  findAllByNameContains(keyword: string): Observable<song[]> {
+    return this.http.get<song[]>(API_URL + `/search/${keyword}`);
   }
 
   getAllSong(username : String): Observable<song[]>{
