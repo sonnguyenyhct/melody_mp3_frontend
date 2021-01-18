@@ -21,4 +21,8 @@ export class SongService {
   get10SongInTopViews(): Observable<song[]> {
     return this.http.get<song[]>(API_URL + `/song/top10views`);
   }
+
+  getLatest(): Observable<song[]>{
+    return this.http.get<song[]>(API_URL + `/songs/latestSongs`);
+  }
 }

@@ -8,6 +8,7 @@ import {RegisterComponent} from './register/register.component';
 import {SongComponent} from './songpage/song/song.component';
 import {CreatePlaylistComponent} from './playlist/create-playlist/create-playlist.component';
 import {ListPlaylistComponent} from './playlist/list-playlist/list-playlist.component';
+import {NewSongsComponent} from './songpage/new-songs/new-songs.component';
 
 const routes: Routes = [
   {
@@ -37,7 +38,8 @@ const routes: Routes = [
   }, {
     path: 'list-playlist',
     component: ListPlaylistComponent
-  }
+  },
+  {path: 'listSongs', component: NewSongsComponent}
 ];
 
 @NgModule({
