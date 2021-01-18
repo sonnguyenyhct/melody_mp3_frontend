@@ -37,4 +37,10 @@ export class UserdetailService {
   getUserDetailByUserName(username : String): Observable<userdetail>{
     return this.http.get<userdetail>(API_URL + `/profile/${username}`);
   }
+  editUserDetail(username: string, customer: Customer): Observable<Customer>{
+    return this.http.put<Customer>(API_URL + `/profile/${username}`,customer);
+  }
+  getAllUser(): Observable<User[]>{
+    return this.http.get<User[]>(API_URL + '/register');
+  }
 }

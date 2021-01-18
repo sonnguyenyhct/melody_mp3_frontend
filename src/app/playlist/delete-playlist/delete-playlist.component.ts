@@ -18,6 +18,7 @@ export class DeletePlaylistComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(paramMap =>{
+      // @ts-ignore
       this.id = +paramMap.get('id');
       this.getPlayList(this.id);
     });

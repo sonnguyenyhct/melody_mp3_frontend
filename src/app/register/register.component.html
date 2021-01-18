@@ -15,21 +15,30 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="far fa-user"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Họ tên" name="username" [(ngModel)]="customer.name">
+            <input type="text" class="form-control" placeholder="Họ tên*" name="username" [(ngModel)]="customer.name">
+            <div *ngIf="!validateName">
+              <p style="color: red">Họ tên không được để trống, vui lòng nhập lại</p>
+            </div>
           </div>
 
           <div class="input-group form-group">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-user"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Tài khoản" name="username" [(ngModel)]="customer.username">
+            <input type="text" class="form-control" placeholder="Tài khoản*" name="username" [(ngModel)]="customer.username">
+            <div *ngIf="!validateUsername">
+              <p style="color: red">Tài khoản ít hơn 6 ký tự hoặc đã tồn tại, vui lòng nhập lại</p>
+            </div>
           </div>
 
           <div class="input-group form-group">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-key"></i></span>
             </div>
-            <input type="password" class="form-control" placeholder="Mật khẩu" name="password" [(ngModel)]="customer.password">
+            <input type="password" class="form-control" placeholder="Mật khẩu*" name="password" [(ngModel)]="customer.password">
+            <div *ngIf="!validatePassword">
+              <p style="color: red">Mật khẩu ít hơn 6 ký tự, vui lòng nhập lại</p>
+            </div>
           </div>
 
           <div class="input-group form-group">
@@ -43,7 +52,10 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-phone-square"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Số điện thoại" name="username" [(ngModel)]="customer.tel">
+            <input type="number" class="form-control" placeholder="Số điện thoại" name="username" [(ngModel)]="customer.tel">
+            <div *ngIf="!validateTel">
+              <p style="color: red">Số điện thoại quá ngắn hoặc quá dài, vui lòng nhập lại</p>
+            </div>
           </div>
 
           <div class="input-group form-group">

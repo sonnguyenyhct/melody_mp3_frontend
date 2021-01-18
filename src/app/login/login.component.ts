@@ -12,8 +12,7 @@ import {AuthService} from '../service/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  // @ts-ignore
-  currentUser: UserToken;
+  currentUser: UserToken | undefined;
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
@@ -37,11 +36,10 @@ export class LoginComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   login(){
-    // @ts-ignore
     this.authService.login( this.user.username, this.user.password)
       .pipe(first())
       .subscribe(data => {
-        this.router.navigate([this.url]);
+        this.router.navigate(['/profile/' + this.user.username]);
         this.isLoggedIn = true;
         this.isLoginFailed = false;
       }, err => {
