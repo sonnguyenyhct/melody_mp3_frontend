@@ -17,7 +17,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxAudioPlayerModule} from 'ngx-audio-player';
 import {SongComponent} from './songpage/song/song.component';
-import { CreatePlaylistComponent } from './playlist/create-playlist/create-playlist.component';
+import {CreatePlaylistComponent} from './playlist/create-playlist/create-playlist.component';
 import { ListPlaylistComponent } from './playlist/list-playlist/list-playlist.component';
 import { UpdatePlaylistComponent } from './playlist/update-playlist/update-playlist.component';
 import { DeletePlaylistComponent } from './playlist/delete-playlist/delete-playlist.component';
@@ -25,8 +25,11 @@ import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
-import { CreatesongComponent } from './createsong/createsong.component';
+import { CreatesongComponent } from './song/createsong/createsong.component';
 import { CreatesingerComponent } from './createsinger/createsinger.component';
+import { ListsongComponent } from './song/listsong/listsong.component';
+import { EditsongComponent } from './song/editsong/editsong.component';
+import { DeletesongComponent } from './song/deletesong/deletesong.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import { CreatesingerComponent } from './createsinger/createsinger.component';
     DeletePlaylistComponent,
     ProfileComponent,
     CreatesongComponent,
-    CreatesingerComponent
+    CreatesingerComponent,
+    ListsongComponent,
+    EditsongComponent,
+    DeletesongComponent
   ],
   imports: [
     BrowserModule,

@@ -48,6 +48,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(paramMap => {
       this.username = paramMap.get('username');
+      console.log(this.username)
       this.userDetailService.getUserDetailByUserName(this.currentUser.username).subscribe(value1 => {
         this.userDetail = value1;
         this.imgSrc = this.userDetail.avatar;
@@ -137,5 +138,11 @@ export class ProfileComponent implements OnInit {
   }
   addSinger(){
     this.route.navigate(["/createsinger/" + this.currentUser.username]);
+  }
+  listSong(){
+    this.route.navigate(["/listsong/" + this.currentUser.username]);
+  }
+  createPlayList(){
+    this.route.navigate(["/create-playlist/" + this.currentUser.username]);
   }
 }

@@ -175,9 +175,13 @@
                   </div>
                 </div>
               </div>
+
               <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <div class="row" style="margin-bottom: 20px">
-                  <div class="col-md-8">
+                  <div class="col-md-6">
+                  </div>
+                  <div class="col-md-2">
+                    <button (click)="listSong()" class="profile-edit-btn" name="btnAddMore">Xem danh sách bài hát</button>
                   </div>
                   <div class="col-md-2">
                     <button (click)="addSong()" class="profile-edit-btn" name="btnAddMore">Thêm bài hát</button>
@@ -186,74 +190,9 @@
                     <button (click)="addSinger()" class="profile-edit-btn" name="btnAddMore">Thêm ca sĩ</button>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-2">
-                    <p>Tên bài</p>
-                  </div>
-                  <div class="col-md-2">
-                    <p>Ca sĩ</p>
-                  </div>
-                  <div class="col-md-2">
-                    <p>Ngày tạo</p>
-                  </div>
-                  <div class="col-md-2">
-                    <p>Lượt xem</p>
-                  </div>
-                  <div class="col-md-2">
-                    <p>Avatar</p>
-                  </div>
-                  <div class="col-md-2">
-                    <p>Lời bài hát</p>
-                  </div>
-                </div>
               </div>
               <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="profile-tab">
-                <div class="row">
-                  <div class="col-md-6">
-                    <label>Experience</label>
-                  </div>
-                  <div class="col-md-6">
-                    <p>Expert</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <label>Hourly Rate</label>
-                  </div>
-                  <div class="col-md-6">
-                    <p>10$/hr</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <label>Total Projects</label>
-                  </div>
-                  <div class="col-md-6">
-                    <p>230</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <label>English Level</label>
-                  </div>
-                  <div class="col-md-6">
-                    <p>Expert</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <label>Availability</label>
-                  </div>
-                  <div class="col-md-6">
-                    <p>6 months</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <label>Your Bio</label><br/>
-                    <p>Your detail description</p>
-                  </div>
-                </div>
+                <button (click)="createPlayList()" class="profile-edit-btn" name="btnAddMore">Tạo playlist</button>
               </div>
             </div>
           </div>
