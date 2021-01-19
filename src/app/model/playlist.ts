@@ -8,4 +8,5 @@ export interface Playlist{
   user?: User;
   songs?: song[];
   avatar?: string;
+  view?: number;
 }
