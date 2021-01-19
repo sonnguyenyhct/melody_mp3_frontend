@@ -20,9 +20,9 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.playlistService.latestPlaylist().subscribe( listPlaylistNew => {
+    this.playlistService.latestPlaylist().subscribe( async listPlaylistNew => {
       this.listPlaylistNew = listPlaylistNew;
-      $(document).ready(() => {
+       $(document).ready(() => {
         $('.slider-for').slick({
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -39,7 +39,7 @@ export class HomepageComponent implements OnInit {
         });
       });
     })
-    this.songService.getList10SongInTopView().subscribe(async list10Song => {
+    this.songService.getList10SongInTopView().subscribe( list10Song => {
       this.listSongMostView10 = list10Song;
     })
 
