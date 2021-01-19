@@ -57,7 +57,7 @@ const routes: Routes = [
     path: 'create-playlist/:username',
     component: CreatePlaylistComponent
   }, {
-    path: 'list-playlist',
+    path: 'list-playlist/:username',
     component: ListPlaylistComponent
   }, {
     path: 'search/:keyword',
