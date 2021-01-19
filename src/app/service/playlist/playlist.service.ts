@@ -39,5 +39,8 @@ export class PlaylistService {
   getTopView(): Observable<Playlist[]>{
     return this.http.get<Playlist[]>(API_URL + `/playlists/topView`);
   }
+  getPlayListMostLike(): Observable<Playlist[]>{
+    return this.http.get<Playlist[]>(API_URL +`/playlists/topLike`)
+  }
 
 }
