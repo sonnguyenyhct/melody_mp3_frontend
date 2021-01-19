@@ -3,6 +3,7 @@ import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Playlist} from '../../model/playlist';
+import {song} from '../../model/song';
 
 const API_URL = `${environment.apiUrl}`;
 

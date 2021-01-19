@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Playlist} from '../../model/playlist';
 import {PlaylistService} from '../../service/playlist/playlist.service';
+import {song} from '../../model/song';
+import {SongService} from '../../service/song/song.service';
 
 declare var $: any;
 
@@ -13,8 +15,8 @@ export class HomepageComponent implements OnInit {
   showSongLike = true;
   showPlaylistLike = false;
   listPlaylistNew : Playlist[] = [];
-  constructor(private playlistService: PlaylistService) {
-
+  listSongMostView10 : song[] = [];
+  constructor(private playlistService: PlaylistService, private songService: SongService) {
   }
 
   ngOnInit(): void {
@@ -36,6 +38,9 @@ export class HomepageComponent implements OnInit {
           focusOnSelect: true
         });
       });
+    })
+    this.songService.getList10SongInTopView().subscribe(async list10Song => {
+      this.listSongMostView10 = list10Song;
     })
 
   }

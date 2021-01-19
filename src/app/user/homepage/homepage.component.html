@@ -56,8 +56,6 @@
     </div>
     <div class="col-md-8 d-none d-md-block">
 
-
-
     </div>
     <div class="col-md-1 d-none d-md-block">
     </div>
@@ -108,37 +106,14 @@
             <button style="border-radius: 5px; padding:10px 100px 10px 100px; margin-right: 40px; margin-left: 15px" type="button" (click)="songLike()" class="btn btn-outline-danger">Bài hát</button>
             <button style="border-radius: 5px; padding:10px 100px 10px 100px" type="button" (click)="playlistLike()" class="btn btn-outline-success">Playlist</button>
           </div>
+
           <ul *ngIf="showSongLike" class="list-unstyled">
-            <li class="media border-bottom py-2">
-              <b style="margin: 25px 30px 20px 20px; color: red; font-size: 25px">1</b>
-              <img src="https://avatar-ex-swe.nixcdn.com/song/2021/01/11/6/9/4/a/1610338398600.jpg" class="mr-3 rounded" width="85" alt="...">
+            <li *ngFor="let song of listSongMostView10;let i = index" class="media border-bottom py-2">
+              <b style="margin: 25px 30px 20px 20px; color: red; font-size: 25px">{{i+1}}</b>
+              <img src="{{song.avatar}}" class="mr-3 rounded" width="85" alt="...">
               <div class="media-body">
-                <h4 class="mt-0 mb-1">Níu Duyên</h4>
-                <small>Lê Bảo Bình</small>
-              </div>
-            </li>
-            <li class="media border-bottom py-2">
-              <b style="margin: 25px 30px 20px 20px; color: red; font-size: 25px">2</b>
-              <img src="https://avatar-ex-swe.nixcdn.com/song/2021/01/11/6/9/4/a/1610338398600.jpg" class="mr-3 rounded" width="85" alt="...">
-              <div class="media-body">
-                <h4 class="mt-0 mb-1">Trên Tình Bạn</h4>
-                <small>Min</small>
-              </div>
-            </li>
-            <li class="media border-bottom py-2">
-              <b style="margin: 25px 30px 20px 20px; color: red; font-size: 25px">3</b>
-              <img src="https://avatar-ex-swe.nixcdn.com/song/2021/01/11/6/9/4/a/1610338398600.jpg" class="mr-3 rounded" width="85" alt="...">
-              <div class="media-body">
-                <h4 class="mt-0 mb-1">Ngải Tình</h4>
-                <small>Thủy Tiên</small>
-              </div>
-            </li>
-            <li class="media border-bottom py-2">
-              <b style="margin: 25px 30px 20px 20px; color: red; font-size: 25px">4</b>
-              <img src="https://avatar-ex-swe.nixcdn.com/song/2021/01/11/6/9/4/a/1610338398600.jpg" class="mr-3 rounded" width="85" alt="...">
-              <div class="media-body">
-                <h4 class="mt-0 mb-1">Dưới Tình Yêu</h4>
-                <small>Thủy Tiên</small>
+                <h4 class="mt-0 mb-1"><a [routerLink]="['/song/'+song.id]">{{song.name}}</a></h4>
+                <small>{{song.author}}</small>
               </div>
             </li>
           </ul>
