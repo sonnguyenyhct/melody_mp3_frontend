@@ -1,16 +1,14 @@
-<div class="col-md-5">
-  <div class="card shadow-sm mb-3">
     <div class="card-header">
-      <span class="h4">Mới Phát Hành</span>
+      <span class="h4">Bài hát mới</span>
     </div>
     <div class="card-body">
       <ul class="list-unstyled">
         <li *ngFor="let song of listLatestSongs" class="media border-bottom py-2">
           <div class="position-relative">
-            <img src="{{song.avatar}}" class="mr-3 rounded" width="85" alt="...">
+            <img src="{{song.avatar}}" class="mr-3 rounded" width="85" height="85" alt="...">
           </div>
           <div class="media-body">
-            <h4 class="mt-0 mb-1">{{song.name}}</h4>
+            <h4 class="mt-0 mb-1"><a [routerLink]="['/song/'+song.id]">{{song.name}}</a></h4>
             <small>{{song.author}}</small>
           </div>
           <a href="{{song.avatar}}" class="px-2 py-1 mr-2 bg-success text-white" title="Play"><i class="fas fa-play"></i></a>
@@ -18,5 +16,3 @@
         </li>
       </ul>
     </div>
-  </div>
-</div>
