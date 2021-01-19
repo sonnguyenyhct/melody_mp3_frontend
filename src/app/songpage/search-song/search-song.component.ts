@@ -9,7 +9,7 @@ import {song} from "../../model/song";
   styleUrls: ['./search-song.component.css']
 })
 export class SearchSongComponent implements OnInit {
-  keyword: string | null;
+  keyword: string | null = '';
   songs: song[] = [];
 
   constructor(private songService: SongService,
@@ -23,7 +23,7 @@ export class SearchSongComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getListSong(keyword) {
+  getListSong(keyword: any) {
     this.songService.findAllByNameContains(keyword).subscribe(value => {
       this.songs = value;
     });

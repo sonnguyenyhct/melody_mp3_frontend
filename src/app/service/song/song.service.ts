@@ -45,4 +45,7 @@ export class SongService {
   editSong(username : String, id : number, song : song): Observable<song>{
     return this.http.put<song>(API_URL + `/editsong/${username}/${id}`,song);
   }
+  addView(song: song): Observable<song>{
+    return this.http.put<song>(API_URL+`/addView/${song.id}`, song);
+  }
 }
