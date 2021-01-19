@@ -1,0 +1,17 @@
+<div class="card-header">
+  <span class="h4">Playlist được nghe nhiều</span>
+</div>
+<div class="card-body">
+  <ul class="list-unstyled">
+    <li *ngFor="let playlist of playlistTopView" class="media border-bottom py-2">
+      <div class="position-relative">
+        <img src="{{playlist.avatar}}" class="mr-3 rounded" width="85" height="85" alt="...">
+      </div>
+      <div class="media-body">
+        <h4 class="mt-0 mb-1"><a [routerLink]="[]">{{playlist.name}}</a></h4>
+        <small>{{playlist.view}}</small>
+      </div>
+      <a href="{{playlist.avatar}}" class="px-2 py-1 mr-2 bg-success text-white" title="Play"><i class="fas fa-play"></i></a>
+    </li>
+  </ul>
+</div>

@@ -33,7 +33,10 @@ export class PlaylistService {
     return this.http.delete<Playlist>(API_URL + `/playlists/${id}`);
   }
   latestPlaylist(): Observable<Playlist[]> {
-    return this.http.get<Playlist[]>(API_URL + `/playlists/latestPlaylists`)
+    return this.http.get<Playlist[]>(API_URL + `/playlists/latestPlaylists`);
+  }
+  getTopView(): Observable<Playlist[]>{
+    return this.http.get<Playlist[]>(API_URL + `/playlists/topView`);
   }
 
 }
