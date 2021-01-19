@@ -56,6 +56,10 @@ export class SongComponent implements OnInit {
     this.songService.getSongById(id).subscribe(value => {
       this.singleTrack[0].title = value.name + '';
       this.singleTrack[0].link = value.file + '';
+      this.singleTrack[0].title = <string> value.name;
+      this.singleTrack[0].link = <string> value.file;
+      // @ts-ignore
+      this.singers = value.singers;
       this.song = value;
       this.songService.addView(this.song).subscribe(value1 => {
         this.song = value1;

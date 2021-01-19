@@ -12,6 +12,8 @@ import {CreatesongComponent} from './song/createsong/createsong.component';
 import {ListsongComponent} from './song/listsong/listsong.component';
 import {EditsongComponent} from './song/editsong/editsong.component';
 import {SearchSongComponent} from './songpage/search-song/search-song.component';
+import {NewSongsComponent} from './songpage/new-songs/new-songs.component';
+import {TopviewPlaylistsComponent} from './playlist/topview-playlists/topview-playlists.component';
 
 const routes: Routes = [
 
@@ -60,6 +62,12 @@ const routes: Routes = [
   }, {
     path: 'search/:keyword',
     component: SearchSongComponent
+  }, {
+  path: 'latestSongs',
+    component: NewSongsComponent
+  }, {
+  path: 'playlists/topView',
+    component: TopviewPlaylistsComponent
   }
 ];
 

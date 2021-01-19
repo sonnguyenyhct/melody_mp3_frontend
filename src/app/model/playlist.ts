@@ -7,4 +7,6 @@ export interface Playlist{
   creationTime?: any;
   user?: User;
   songs?: song[];
+  avatar?: string;
+  view?: number;
 }
