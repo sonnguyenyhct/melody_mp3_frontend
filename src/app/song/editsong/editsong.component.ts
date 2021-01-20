@@ -31,11 +31,10 @@ export class EditsongComponent implements OnInit {
   ngOnInit(): void {
     this.editSuccess = false;
     this.activatedRoute.paramMap.subscribe(async paramMap => {
-       // @ts-ignore
       this.id = +paramMap.get('id');
-      await this.songService.getSongById(this.id).subscribe(song => {
+      this.songService.getSongById(this.id).subscribe(song => {
         this.song = song;
-        console.log(song.name)
+        console.log(song.name);
       });
     });
 

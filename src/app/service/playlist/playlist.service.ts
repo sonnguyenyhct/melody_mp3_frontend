@@ -38,4 +38,8 @@ export class PlaylistService {
   getPlayListMostLike(): Observable<Playlist[]>{
     return this.http.get<Playlist[]>(API_URL +`/playlists/topLike`)
   }
+
+  getPlaylistByUsername(username : String): Observable<Playlist[]>{
+    return this.http.get<Playlist[]>(API_URL +`/playlists/user/{username}`)
+  }
 }

@@ -27,8 +27,8 @@ export class SongComponent implements OnInit {
     singers: []
   };
   listTop10Songs: song[] = [];
-  idSong: number | undefined;
-  idPlaylist: number | undefined;
+  idSong: any;
+  idPlaylist: any;
   listPlaylist: Playlist[] = [];
   currentUser: any;
 
@@ -80,7 +80,7 @@ export class SongComponent implements OnInit {
     });
   }
 
-  addSongToPlayList(idSong: number, idPlaylist: number) {
+  addSongToPlayList(idSong: any, idPlaylist: any) {
     this.playListService.addSongToPlaylist(idSong, idPlaylist).subscribe(value => {
       if (value == null) {
         alert('Đã tồn tại bài hát trong playlist');
