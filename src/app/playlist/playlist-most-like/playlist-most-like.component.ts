@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PlaylistService} from '../../service/playlist/playlist.service';
 import {Playlist} from '../../model/playlist';
+import {userdetail} from '../../model/userdetail';
 
 declare var $: any;
 
@@ -11,7 +12,7 @@ declare var $: any;
 })
 export class PlaylistMostLikeComponent implements OnInit {
   listPlaylistMostLike : Playlist[] = [];
-
+  userdatas : userdetail[] = [];
   constructor(private playlistService : PlaylistService) {
 
   }
