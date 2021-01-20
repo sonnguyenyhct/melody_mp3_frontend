@@ -51,9 +51,12 @@ export class SongService {
     return this.http.put<song>(API_URL+`/songs/addView/${song.id}`, song);
   }
   addLikeSong(likeSong: LikeSong){
-    return this.http.post<LikeSong>(API_URL + `/songs/addLike/${likeSong.song.id}/user/${likeSong.user.id}`, likeSong);
+    return this.http.post<LikeSong>(API_URL + `/songs/addLike/${likeSong.song.id}/user/${likeSong.user.username}`, likeSong);
   }
   deleteLikeSong(likeSong: LikeSong){
-    return this.http.delete<LikeSong>(API_URL + `/songs/deleteLike/${likeSong.song.id}/user/${likeSong.user.id}`);
+    return this.http.delete<LikeSong>(API_URL + `/songs/deleteLike/${likeSong.song.id}/user/${likeSong.user.username}`);
+  }
+  getLikeStatus(likeSong: LikeSong){
+    return this.http.get<LikeSong>(API_URL + `/songs/like/${likeSong.song.id}/user/${likeSong.user.username}`);
   }
 }
