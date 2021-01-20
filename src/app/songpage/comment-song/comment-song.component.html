@@ -2,28 +2,19 @@
   <h1>Bình luận</h1>
   <!-- Comments List -->
   <div class="comments">
-    <!-- Comment -->
-    <div class="comment" ng-repeat="comment in cmntCtrl.comments | orderBy: '-date'">
+    <div class="comment" *ngFor="let comment of listCommentSong">
       <!-- Comment Avatar -->
       <div class="comment-avatar">
-        <img ng-src="">
-      </div>
-    </div>
-
-    <!-- Comment - Dummy -->
-    <div class="comment">
-      <!-- Comment Avatar -->
-      <div class="comment-avatar">
-        <img src="http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80">
+        <img src="{{comment.user}}">
       </div>
 
       <!-- Comment Box -->
       <div class="comment-box">
-        <div class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus iste nostrum dolorem natus recusandae incidunt voluptatum.</div>
+        <div class="comment-text">{{comment.content}}</div>
         <div class="comment-footer">
           <div class="comment-info">
             <span class="comment-author">
-              <a href="mailto:sexar@pagelab.io">Sexar</a>
+              <a href="mailto:sexar@pagelab.io">{{comment.user.username}}</a>
             </span>
             <span class="comment-date">Feb 2, 2013 11:32:04 PM</span>
           </div>
@@ -36,43 +27,42 @@
     </div>
 
     <!-- Comment - Dummy -->
-    <div class="comment">
-      <!-- Comment Avatar -->
-      <div class="comment-avatar">
-        <img src="http://lorempixel.com/200/200/people">
-      </div>
+<!--    <div class="comment">-->
+<!--      &lt;!&ndash; Comment Avatar &ndash;&gt;-->
+<!--      <div class="comment-avatar">-->
+<!--        <img src="http://lorempixel.com/200/200/people">-->
+<!--      </div>-->
 
-      <!-- Comment Box -->
-      <div class="comment-box">
-        <div class="comment-text">Eligendi voluptatum ducimus architecto tempore, quaerat explicabo veniam fuga corporis totam reprehenderit quasi sapiente modi tempora at perspiciatis mollitia, dolores voluptate. Cumque, corrupti?</div>
-        <div class="comment-footer">
-          <div class="comment-info">
-            <span class="comment-author">
-              <a href="mailto:ximme13@somedomain.io">Ximme</a>
-            </span>
-            <span class="comment-date">Jan 31, 1986 11:32:04 PM</span>
-          </div>
+<!--      &lt;!&ndash; Comment Box &ndash;&gt;-->
+<!--      <div class="comment-box">-->
+<!--        <div class="comment-text">Eligendi voluptatum ducimus architecto tempore, quaerat explicabo veniam fuga corporis totam reprehenderit quasi sapiente modi tempora at perspiciatis mollitia, dolores voluptate. Cumque, corrupti?</div>-->
+<!--        <div class="comment-footer">-->
+<!--          <div class="comment-info">-->
+<!--            <span class="comment-author">-->
+<!--              <a href="mailto:ximme13@somedomain.io">Ximme</a>-->
+<!--            </span>-->
+<!--            <span class="comment-date">Jan 31, 1986 11:32:04 PM</span>-->
+<!--          </div>-->
 
-          <div class="comment-actions">
-<!--            <a href="#">Reply</a>-->
-          </div>
-        </div>
-      </div>
-    </div>
+<!--          <div class="comment-actions">-->
+<!--&lt;!&ndash;            <a href="#">Reply</a>&ndash;&gt;-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
     <!-- From -->
     <div class="comment-form">
       <!-- Comment Avatar -->
       <div class="comment-avatar">
-        <img src="http://lorempixel.com/200/200/people">
+        <img src="{{avatar}}">
       </div>
 
-      <form class="form" name="form" ng-submit="form.$valid && cmntCtrl.addComment()" novalidate>
+      <form class="form" name="form">
         <div class="form-row">
         <textarea
           class="input"
-          ng-model="cmntCtrl.comment.text"
           placeholder="Viết bình luận..."
-          required></textarea>
+          ></textarea>
         </div>
 
         <div class="form-row">

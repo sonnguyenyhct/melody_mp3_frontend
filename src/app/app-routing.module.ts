@@ -70,7 +70,7 @@ const routes: Routes = [
   path: 'playlists/topView',
     component: TopviewPlaylistsComponent
   }, {
-    path: 'comment',
+    path: 'comment/:id',
     component: CommentSongComponent
   }
 
