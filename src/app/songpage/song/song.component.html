@@ -13,7 +13,7 @@
           {{song.numberOfView}}</span></td>
       </tr>
     </table>
-    <table width="750px" bgcolor="#6495ed">
+    <table width="750px">
       <tr>
         <td width="200px"><img width="200px" height="200px" [src]="song.avatar"></td>
         <td>
@@ -24,7 +24,7 @@
       </tr>
       <tr>
         <td colspan="2">
-          <ngx-audio-player [autoPlay]="false"
+          <ngx-audio-player [autoPlay]="true"
                             [displayPlaylist]="false"
                             [displayTitle]="false"
                             [displayVolumeControls]="true"

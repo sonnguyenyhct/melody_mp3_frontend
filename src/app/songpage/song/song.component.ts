@@ -86,4 +86,6 @@ export class SongComponent implements OnInit {
       }
     });
   }
+
+  likeSong(){}
 }
