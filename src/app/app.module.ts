@@ -20,17 +20,23 @@ import {SongComponent} from './songpage/song/song.component';
 import {CreatePlaylistComponent} from './playlist/create-playlist/create-playlist.component';
 import { ListPlaylistComponent } from './playlist/list-playlist/list-playlist.component';
 import { UpdatePlaylistComponent } from './playlist/update-playlist/update-playlist.component';
-import { DeletePlaylistComponent } from './playlist/delete-playlist/delete-playlist.component';
+import {DeletePlaylistComponent} from './playlist/delete-playlist/delete-playlist.component';
 import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {CreatesongComponent} from './song/createsong/createsong.component';
 import { CreatesingerComponent } from './createsinger/createsinger.component';
+
 import { ListsongComponent } from './song/listsong/listsong.component';
 import {EditsongComponent} from './song/editsong/editsong.component';
 import { DeletesongComponent } from './song/deletesong/deletesong.component';
 import {SearchSongComponent} from './songpage/search-song/search-song.component';
+import {NewSongsComponent} from './songpage/new-songs/new-songs.component';
+import { ListPlaylistnewComponent } from './playlist/list-playlistnew/list-playlistnew.component';
+import { SongMostviewComponent } from './song-mostview/song-mostview.component';
+import { TopviewPlaylistsComponent } from './playlist/topview-playlists/topview-playlists.component';
+import { PlaylistMostLikeComponent } from './playlist/playlist-most-like/playlist-most-like.component';
 
 @NgModule({
   declarations: [
@@ -51,11 +57,15 @@ import {SearchSongComponent} from './songpage/search-song/search-song.component'
     DeletePlaylistComponent,
     ProfileComponent,
     CreatesongComponent,
-    CreatesingerComponent,
     ListsongComponent,
     EditsongComponent,
     DeletesongComponent,
-    SearchSongComponent
+    SearchSongComponent,
+    NewSongsComponent,
+    ListPlaylistnewComponent,
+    SongMostviewComponent,
+    TopviewPlaylistsComponent,
+    PlaylistMostLikeComponent
   ],
   imports: [
     BrowserModule,

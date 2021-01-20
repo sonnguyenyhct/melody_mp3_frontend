@@ -1,7 +1,6 @@
 import {album} from './album';
 import {User} from './user';
 import {singer} from './singer';
-import {Playlist} from './playlist';
 
 export interface song {
   id?: number;
@@ -15,5 +14,4 @@ export interface song {
   album?: album;
   user?: User;
   singers?: singer[];
-  playlists?: Playlist[];
 }

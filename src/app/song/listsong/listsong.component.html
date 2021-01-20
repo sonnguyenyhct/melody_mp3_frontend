@@ -9,6 +9,7 @@
               <h2 style="color: blue">
                 <strong>DANH SÁCH BÀI HÁT</strong>
               </h2>
+              <button (click)="addSong()" class="profile-edit-btn" name="btnAddMore">Tạo bài hát</button>
             </div>
           </div>
           <div class="col-md-12">
@@ -29,13 +30,13 @@
                 <tbody>
                 <tr *ngFor="let song of listSong; let i = index">
                   <th scope="row">{{i+1}}</th>
-                  <td>{{song.name}}</td>
+                  <td><a [routerLink]="['/song/'+song.id]">{{song.name}}</a></td>
                   <td>{{song.author}}</td>
                   <td>{{song.creationTime.substring(0,10)}}</td>
                   <td>{{song.numberOfView}}</td>
                   <td><img width="100" height="100" src="{{song.avatar}}" alt=""></td>
                   <td> <a [routerLink]="['/editsong',currentUser.username,song.id]">Edit</a></td >
-                  <td> <a [routerLink]="['/delete-book',song.id]">Delete</a></td>
+                  <td> <button type="button" class="btn btn-secondary" (click)="deleteSong(song.id)">Delete</button></td>
                 </tr>
                 </tbody>
               </table>
