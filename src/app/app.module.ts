@@ -26,6 +26,8 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {CreatesongComponent} from './song/createsong/createsong.component';
+import { CreatesingerComponent } from './createsinger/createsinger.component';
+
 import { ListsongComponent } from './song/listsong/listsong.component';
 import {EditsongComponent} from './song/editsong/editsong.component';
 import { DeletesongComponent } from './song/deletesong/deletesong.component';
@@ -35,6 +37,7 @@ import { ListPlaylistnewComponent } from './playlist/list-playlistnew/list-playl
 import { SongMostviewComponent } from './song-mostview/song-mostview.component';
 import { TopviewPlaylistsComponent } from './playlist/topview-playlists/topview-playlists.component';
 import { PlaylistMostLikeComponent } from './playlist/playlist-most-like/playlist-most-like.component';
+import { CommentSongComponent } from './songpage/comment-song/comment-song.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +66,8 @@ import { PlaylistMostLikeComponent } from './playlist/playlist-most-like/playlis
     ListPlaylistnewComponent,
     SongMostviewComponent,
     TopviewPlaylistsComponent,
-    PlaylistMostLikeComponent
+    PlaylistMostLikeComponent,
+    CommentSongComponent
   ],
   imports: [
     BrowserModule,

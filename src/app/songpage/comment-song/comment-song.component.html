@@ -1,0 +1,74 @@
+<div class="comments-app" ng-app="commentsApp" ng-controller="CommentsController as cmntCtrl">
+  <h1>Bình luận</h1>
+  <!-- Comments List -->
+  <div class="comments">
+    <div class="comment" *ngFor="let comment of listCommentSong">
+      <!-- Comment Avatar -->
+      <div class="comment-avatar">
+        <img src="{{comment.user}}">
+      </div>
+
+      <!-- Comment Box -->
+      <div class="comment-box">
+        <div class="comment-text">{{comment.content}}</div>
+        <div class="comment-footer">
+          <div class="comment-info">
+            <span class="comment-author">
+              <a href="mailto:sexar@pagelab.io">{{comment.user.username}}</a>
+            </span>
+            <span class="comment-date">Feb 2, 2013 11:32:04 PM</span>
+          </div>
+
+          <div class="comment-actions">
+<!--            <a href="#">Reply</a>-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comment - Dummy -->
+<!--    <div class="comment">-->
+<!--      &lt;!&ndash; Comment Avatar &ndash;&gt;-->
+<!--      <div class="comment-avatar">-->
+<!--        <img src="http://lorempixel.com/200/200/people">-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Comment Box &ndash;&gt;-->
+<!--      <div class="comment-box">-->
+<!--        <div class="comment-text">Eligendi voluptatum ducimus architecto tempore, quaerat explicabo veniam fuga corporis totam reprehenderit quasi sapiente modi tempora at perspiciatis mollitia, dolores voluptate. Cumque, corrupti?</div>-->
+<!--        <div class="comment-footer">-->
+<!--          <div class="comment-info">-->
+<!--            <span class="comment-author">-->
+<!--              <a href="mailto:ximme13@somedomain.io">Ximme</a>-->
+<!--            </span>-->
+<!--            <span class="comment-date">Jan 31, 1986 11:32:04 PM</span>-->
+<!--          </div>-->
+
+<!--          <div class="comment-actions">-->
+<!--&lt;!&ndash;            <a href="#">Reply</a>&ndash;&gt;-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+    <!-- From -->
+    <div class="comment-form">
+      <!-- Comment Avatar -->
+      <div class="comment-avatar">
+        <img src="{{avatar}}">
+      </div>
+
+      <form class="form" name="form">
+        <div class="form-row">
+        <textarea
+          class="input"
+          placeholder="Viết bình luận..."
+          ></textarea>
+        </div>
+
+        <div class="form-row">
+          <input type="submit" value="Đăng">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -12,8 +12,11 @@ import {CreatesongComponent} from './song/createsong/createsong.component';
 import {ListsongComponent} from './song/listsong/listsong.component';
 import {EditsongComponent} from './song/editsong/editsong.component';
 import {SearchSongComponent} from './songpage/search-song/search-song.component';
+import {UpdatePlaylistComponent} from './playlist/update-playlist/update-playlist.component';
+import {DeletePlaylistComponent} from './playlist/delete-playlist/delete-playlist.component';
 import {NewSongsComponent} from './songpage/new-songs/new-songs.component';
 import {TopviewPlaylistsComponent} from './playlist/topview-playlists/topview-playlists.component';
+import {CommentSongComponent} from './songpage/comment-song/comment-song.component';
 
 const routes: Routes = [
 
@@ -56,10 +59,21 @@ const routes: Routes = [
   {
     path: 'create-playlist/:username',
     component: CreatePlaylistComponent
+  },
+  {
   }, {
     path: 'list-playlist/:username',
     component: ListPlaylistComponent
-  }, {
+  },
+  {
+    path: 'update-playlist/:username/:id',
+    component: UpdatePlaylistComponent
+  },
+  {
+    path: 'delete-playlist/:username',
+    component: DeletePlaylistComponent
+  },
+  {
     path: 'search/:keyword',
     component: SearchSongComponent
   }, {
@@ -68,7 +82,11 @@ const routes: Routes = [
   }, {
   path: 'playlists/topView',
     component: TopviewPlaylistsComponent
+  }, {
+    path: 'comment/:id',
+    component: CommentSongComponent
   }
+
 ];
 
 @NgModule({

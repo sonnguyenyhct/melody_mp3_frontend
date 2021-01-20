@@ -86,6 +86,8 @@
               <div class="media-body">
                 <h4 class="mt-0 mb-1"><a [routerLink]="['/song/'+song.id]">{{song.name}}</a></h4>
                 <small>{{song.author}}</small>
+                <br>
+                <strong style="color: red"><i class="fas fa-headphones-alt" style="margin-right: 5px"></i>{{song.numberOfView}}</strong>
               </div>
               <a [routerLink]="['/song/'+song.id]" class="px-2 py-1 mr-2 bg-success text-white" title="Play"><i class="fas fa-play"></i></a>
               <a href="#" class="px-2 py-1 bg-danger text-white" song-id="1" title="Thích"><i class="far fa-heart"></i></a>
