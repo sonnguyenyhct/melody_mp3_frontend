@@ -25,10 +25,10 @@ import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
-import { CreatesongComponent } from './song/createsong/createsong.component';
+import {CreatesongComponent} from './song/createsong/createsong.component';
 import { CreatesingerComponent } from './createsinger/createsinger.component';
 import { ListsongComponent } from './song/listsong/listsong.component';
-import { EditsongComponent } from './song/editsong/editsong.component';
+import {EditsongComponent} from './song/editsong/editsong.component';
 import { DeletesongComponent } from './song/deletesong/deletesong.component';
 import {SearchSongComponent} from './songpage/search-song/search-song.component';
 

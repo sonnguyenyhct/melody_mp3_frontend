@@ -13,23 +13,23 @@ export class PlaylistService {
 
   constructor(private http: HttpClient) {}
 
-  getAllPlayList(): Observable<Playlist[]> {
-    return this.http.get<Playlist[]>(API_URL + `/playlists`);
+  getAllPlayList(username: String): Observable<Playlist[]> {
+    return this.http.get<Playlist[]>(API_URL + `/playlists/user/${username}`);
   }
 
-  createNewPlayList(playlist: Playlist): Observable<Playlist> {
-    return this.http.post<Playlist>(API_URL + `/playlists`, playlist);
+  createNewPlayList(playlist: Playlist, username: String): Observable<Playlist> {
+    return this.http.post<Playlist>(API_URL + `/playlists/user/${username}`, playlist);
   }
 
-  updatePlayList(id: number, playlist: Playlist): Observable<Playlist> {
-    return this.http.put<Playlist>(API_URL + `/playlists/${id}`, playlist);
+  updatePlayList(idPlaylist: number, playlist: Playlist, username: String): Observable<Playlist> {
+    return this.http.put<Playlist>(API_URL + `/playlists/user/${username}/playlist/${idPlaylist}`, playlist);
   }
 
   getPlayListById(id: number): Observable<Playlist> {
     return this.http.get<Playlist>(API_URL + `/playlists/${id}`);
   }
 
-  deletePlayListById(id: number): Observable<Playlist> {
-    return this.http.delete<Playlist>(API_URL + `/playlists/${id}`);
+  deletePlayListById(idPlaylist: number, username: String): Observable<Playlist> {
+    return this.http.delete<Playlist>(API_URL + `/playlists/user/${username}/playlist/${idPlaylist}`);
   }
 }

@@ -13,6 +13,8 @@ import {CreatesingerComponent} from './createsinger/createsinger.component';
 import {ListsongComponent} from './song/listsong/listsong.component';
 import {EditsongComponent} from './song/editsong/editsong.component';
 import {SearchSongComponent} from './songpage/search-song/search-song.component';
+import {UpdatePlaylistComponent} from './playlist/update-playlist/update-playlist.component';
+import {DeletePlaylistComponent} from './playlist/delete-playlist/delete-playlist.component';
 
 const routes: Routes = [
 
@@ -60,10 +62,20 @@ const routes: Routes = [
   {
     path: 'create-playlist/:username',
     component: CreatePlaylistComponent
-  }, {
-    path: 'list-playlist',
+  },
+  {
+    path: 'list-playlist/:username',
     component: ListPlaylistComponent
-  }, {
+  },
+  {
+    path: 'update-playlist/:username/:id',
+    component: UpdatePlaylistComponent
+  },
+  {
+    path: 'delete-playlist/:username',
+    component: DeletePlaylistComponent
+  },
+  {
     path: 'search/:keyword',
     component: SearchSongComponent
   }
