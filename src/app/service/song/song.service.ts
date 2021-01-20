@@ -47,6 +47,6 @@ export class SongService {
     return this.http.get<song[]>(API_URL + `/top10views`);
   }
   addView(song: song): Observable<song>{
-    return this.http.put<song>(API_URL+`/addView/${song.id}`, song);
+    return this.http.put<song>(API_URL+`/songs/addView/${song.id}`, song);
   }
 }

@@ -40,11 +40,6 @@
         <td rowspan="2" width="15%"><img src="../../../assets/image/Capture2.JPG" height="40" width="120"/></td>
         <td width="40%"><span style="font-size: 15px">Cung cấp bởi</span></td>
         <ng-container *ngIf="currentUser">
-          <td rowspan="2" align="right">
-            <button type="button" class="btn btn-outline-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-            </svg></button><span style="font-size: 20px"> 4334434</span>
-          </td>
           <td rowspan="2">
             <div class="dropdown" align="right">
               <a class="btn btn-light btg-lg dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
@@ -58,6 +53,11 @@
                 </ng-container>
               </div>
             </div>
+          </td>
+          <td rowspan="2" align="right">
+            <button type="button" class="btn btn-outline-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+            </svg> Like</button><span style="font-size: 20px"></span>
           </td>
         </ng-container>
       </tr>
