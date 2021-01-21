@@ -56,7 +56,7 @@ export class CommentSongComponent implements OnInit {
      this.commentSongService.postCommentSong(this.idSong,this.currentUser.username,this.commentSong).subscribe(async () =>{
        console.log("OK")
        await this.route.navigate(['/']);
-       await this.route.navigate(['/song/' + this.idSong]);
+       await this.route.navigate(['/comment/' + this.idSong]);
      })
   }
 
