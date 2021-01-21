@@ -12,14 +12,12 @@ declare var $: any;
 })
 export class PlaylistMostLikeComponent implements OnInit {
   listPlaylistMostLike: Playlist[] = [];
-  userdatas: userdetail[] = [];
   listPlaylistLikeNumber: number[] = [];
   constructor(private playlistService: PlaylistService) {
     playlistService.getPlaylistLikeNumber().subscribe(listNumber => {
       this.listPlaylistLikeNumber = listNumber;
       console.log(this.listPlaylistLikeNumber.length);
     });
-
   }
 
   ngOnInit(): void {
