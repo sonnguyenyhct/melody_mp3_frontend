@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
     this.route.navigate(["/profile/" + this.currentUser.username]);
   }
 
-  searchSong() {
+  searchSongPlaylist() {
     this.route.navigate(['/search/' + this.keyword]);
   }
 }

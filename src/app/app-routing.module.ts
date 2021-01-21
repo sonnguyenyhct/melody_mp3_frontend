@@ -31,8 +31,8 @@ const routes: Routes = [
   {
     path: 'createsong/:username',
     component: CreatesongComponent,
-  canActivate: [AuthGuard]
-},
+    canActivate: [AuthGuard]
+  },
   {
     path: 'listsong/:username',
     component: ListsongComponent,
@@ -65,16 +65,16 @@ const routes: Routes = [
     path: 'search/:keyword',
     component: SearchSongComponent
   }, {
-  path: 'latestSongs',
+    path: 'latestSongs',
     component: NewSongsComponent
   }, {
-  path: 'playlists/topView',
+    path: 'playlists/topView',
     component: TopviewPlaylistsComponent
   }, {
     path: 'comment/:id',
     component: CommentSongComponent
   }, {
-  path: 'songs/topLike',
+    path: 'songs/topLike',
     component: SongMostLikeComponent
   }
 
