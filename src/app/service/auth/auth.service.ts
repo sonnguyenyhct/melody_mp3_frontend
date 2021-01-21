@@ -11,7 +11,7 @@ const API_URL = `${environment.apiUrl}`;
 })
 export class AuthService {
   update = new EventEmitter<string>();
-  private currentUserSubject: BehaviorSubject<UserToken>;
+  public currentUserSubject: BehaviorSubject<UserToken>;
   public currentUser: Observable<UserToken>;
 
   constructor(private http: HttpClient) {
@@ -24,10 +24,11 @@ export class AuthService {
   }
 
   // tslint:disable-next-line:typedef
-  login(username: string, password: string) {
+  login(username: string | undefined, password: string | undefined) {
     return this.http.post(API_URL + '/login', {username, password})
       .pipe(map(user => {
         localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('password',JSON.stringify(password));
         this.currentUserSubject.next(user);
         this.update.emit('login');
         return user;

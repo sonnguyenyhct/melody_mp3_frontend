@@ -12,12 +12,16 @@ import {AuthService} from '../service/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  currentUser: UserToken;
+  currentUser: UserToken | undefined;
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
   user: User = {
     username: '',
     password: ''
   };
   returnUrl = '';
+  url ='/profile/' + this.user.username;
 
   constructor( private router: Router,
                private activatedRoute: ActivatedRoute,
@@ -35,7 +39,12 @@ export class LoginComponent implements OnInit {
     this.authService.login( this.user.username, this.user.password)
       .pipe(first())
       .subscribe(data => {
-        this.router.navigate([this.returnUrl]);
+        this.router.navigate(['/profile/' + this.user.username]);
+        this.isLoggedIn = true;
+        this.isLoginFailed = false;
+      }, err => {
+        this.isLoginFailed = true;
+        this.errorMessage = err.error.message;
       });
   }
 

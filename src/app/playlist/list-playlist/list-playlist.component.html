@@ -1,0 +1,18 @@
+<app-header></app-header>
+<ng-container>
+  <p>Playlists : {{playlists.length}}</p>
+</ng-container>
+<table border="1px solid black">
+  <tr>
+    <th>STT</th>
+    <th>Tên playlist</th>
+    <th colspan="2">Action</th>
+  </tr>
+  <tr *ngFor="let playlsit of playlists; let i =index">
+    <td>{{i+1}}</td>
+    <td>{{playlsit.name}}</td>
+    <td><a [routerLink]="['/update-book/',playlsit.id]">Edit</a>
+      <a [routerLink]="['/delete-book/',playlsit.id]">Delete</a></td>
+  </tr>
+</table>
+<app-footer></app-footer>

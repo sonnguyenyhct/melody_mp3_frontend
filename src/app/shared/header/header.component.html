@@ -12,28 +12,26 @@
       <li class="nav-item">
         <a class="nav-link" href="/the-loai"><i class="fas fa-music"></i> Thể loại</a>
       </li>
-      <!--<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-placement="bottom" title="Notification">
-          <i class="fas fa-bell"></i> <span class="badge badge-pill badge-success align-top">10</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>-->
     </ul>
-    <form class="form-inline" style="margin: 0 auto">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search post" aria-label="Search" style="width: 500px">
+    <form class="form-inline" style="margin: 0 auto" (ngSubmit)="searchSong()">
+      <input class="form-control mr-sm-2" type="search" name="keyword" [(ngModel)]="keyword" placeholder="Tìm bài hát"
+             aria-label="Search" style="width: 500px">
       <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
     </form>
-    <ul class="navbar-nav">
+    <ul class="navbar-nav" *ngIf="!isUserLogin">
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-user"></i> Đăng ký</a>
+        <a class="nav-link" href="/register"><i class="fas fa-user"></i> Đăng ký</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+        <a class="nav-link" href="/login"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav" *ngIf="isUserLogin">
+      <li class="nav-item" style="margin-right: 5px">
+        <img (click)="showProfile()" [src] = "imgSrc" class="rounded-circle" alt="Cinque Terre" width="40" height="40">
+      </li>
+      <li class="nav-item">
+        <a href="/"><button style="border: none; background: #f8f9fa" class="nav-link" (click)="logout()" ><i class="fas fa-sign-in-alt"></i> Đăng xuất</button></a>
       </li>
     </ul>
   </div>
