@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Playlist} from '../../model/playlist';
 import {song} from '../../model/song';
+import {Track} from "ngx-audio-player";
 const API_URL = `${environment.apiUrl}`;
 @Injectable({
   providedIn: 'root'
@@ -43,6 +44,9 @@ export class PlaylistService {
   }
   getPlaylistLikeNumber(): Observable<number[]>{
     return this.http.get<number[]>(API_URL + `/playlists/likeNumber`);
+  }
+  getTrackPlaylist(id: number): Observable<Track[]> {
+    return this.http.get<Track[]>(API_URL + `/playlists/tracks/${id}`);
   }
   findAllByNameContains(keyword: string): Observable<Playlist[]> {
     return this.http.get<Playlist[]>(API_URL + `/searchPlaylist/${keyword}`);

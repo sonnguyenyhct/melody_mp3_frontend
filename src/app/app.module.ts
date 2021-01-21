@@ -37,6 +37,7 @@ import { TopviewPlaylistsComponent } from './playlist/topview-playlists/topview-
 import { PlaylistMostLikeComponent } from './playlist/playlist-most-like/playlist-most-like.component';
 import { CommentSongComponent } from './songpage/comment-song/comment-song.component';
 import { SongMostLikeComponent } from './song-most-like/song-most-like.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -79,9 +80,9 @@ import { SongMostLikeComponent } from './song-most-like/song-most-like.component
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
