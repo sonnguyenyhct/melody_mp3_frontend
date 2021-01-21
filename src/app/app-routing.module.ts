@@ -21,7 +21,7 @@ import {CommentSongComponent} from './songpage/comment-song/comment-song.compone
 const routes: Routes = [
 
   {
-    path: '',
+    path: '/',
     component: HomepageComponent
   },
   {

@@ -6,7 +6,7 @@ import {userdetail} from '../../model/userdetail';
 declare var $: any;
 
 @Component({
-  selector: 'app-playlist-most-like',
+  selector: '  app-playlist-most-like',
   templateUrl: './playlist-most-like.component.html',
   styleUrls: ['./playlist-most-like.component.css']
 })
