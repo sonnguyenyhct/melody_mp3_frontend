@@ -133,12 +133,12 @@ export class SongComponent implements OnInit {
 
 
 
-showFullLyric = true;
+/*showFullLyric = true;
 
 
 
 
 collapseLyric(){
   this.showFullLyric = !this.showFullLyric;
-}
+}*/
 
