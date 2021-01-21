@@ -21,8 +21,6 @@ import {CreatePlaylistComponent} from './playlist/create-playlist/create-playlis
 import { ListPlaylistComponent } from './playlist/list-playlist/list-playlist.component';
 import { UpdatePlaylistComponent } from './playlist/update-playlist/update-playlist.component';
 import {DeletePlaylistComponent} from './playlist/delete-playlist/delete-playlist.component';
-import {environment} from '../environments/environment';
-import {AngularFireModule} from '@angular/fire';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {CreatesongComponent} from './song/createsong/createsong.component';
@@ -36,6 +34,8 @@ import { SongMostviewComponent } from './song-mostview/song-mostview.component';
 import { TopviewPlaylistsComponent } from './playlist/topview-playlists/topview-playlists.component';
 import { PlaylistMostLikeComponent } from './playlist/playlist-most-like/playlist-most-like.component';
 import { CommentSongComponent } from './songpage/comment-song/comment-song.component';
+import { PlayPlaylistComponent } from './playlist/play-playlist/play-playlist.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -65,7 +65,8 @@ import { CommentSongComponent } from './songpage/comment-song/comment-song.compo
     SongMostviewComponent,
     TopviewPlaylistsComponent,
     PlaylistMostLikeComponent,
-    CommentSongComponent
+    CommentSongComponent,
+    PlayPlaylistComponent
   ],
   imports: [
     BrowserModule,
@@ -77,9 +78,9 @@ import { CommentSongComponent } from './songpage/comment-song/comment-song.compo
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

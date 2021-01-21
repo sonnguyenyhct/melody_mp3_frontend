@@ -15,6 +15,7 @@ import {SearchSongComponent} from './songpage/search-song/search-song.component'
 import {NewSongsComponent} from './songpage/new-songs/new-songs.component';
 import {TopviewPlaylistsComponent} from './playlist/topview-playlists/topview-playlists.component';
 import {CommentSongComponent} from './songpage/comment-song/comment-song.component';
+import {PlayPlaylistComponent} from "./playlist/play-playlist/play-playlist.component";
 
 const routes: Routes = [
 
@@ -30,8 +31,8 @@ const routes: Routes = [
   {
     path: 'createsong/:username',
     component: CreatesongComponent,
-  canActivate: [AuthGuard]
-},
+    canActivate: [AuthGuard]
+  },
   {
     path: 'listsong/:username',
     component: ListsongComponent,
@@ -64,14 +65,17 @@ const routes: Routes = [
     path: 'search/:keyword',
     component: SearchSongComponent
   }, {
-  path: 'latestSongs',
+    path: 'latestSongs',
     component: NewSongsComponent
   }, {
-  path: 'playlists/topView',
+    path: 'playlists/topView',
     component: TopviewPlaylistsComponent
   }, {
     path: 'comment/:id',
     component: CommentSongComponent
+  }, {
+    path: 'playlists/display/:id',
+    component: PlayPlaylistComponent
   }
 
 ];
