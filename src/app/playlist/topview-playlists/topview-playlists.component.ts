@@ -11,15 +11,15 @@ import {UserdetailService} from '../../service/userdetail/userdetail.service';
 })
 export class TopviewPlaylistsComponent implements OnInit {
 
-  userdatas : userdetail[] = [];
-  userdata : userdetail | undefined;
+  userdatas: userdetail[] = [];
+  userdata: userdetail | undefined;
   playlistTopView: Playlist[] = [];
-  constructor(private playlistService: PlaylistService, private userdetailService : UserdetailService) { }
+  constructor(private playlistService: PlaylistService, private userdetailService: UserdetailService) { }
 
   ngOnInit(): void {
     this.playlistService.getTopView().subscribe(async playlists => {
       this.playlistTopView = playlists;
-      for (let i=0; i< playlists.length; i++){
+      for (let i = 0; i < playlists.length; i++){
         // @ts-ignore
         this.userdata = await this.getListUserDetail(this.playlistTopView[i].user.username);
         this.userdatas.push(this.userdata);

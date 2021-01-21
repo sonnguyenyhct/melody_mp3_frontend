@@ -17,6 +17,7 @@ import {DeletePlaylistComponent} from './playlist/delete-playlist/delete-playlis
 import {NewSongsComponent} from './songpage/new-songs/new-songs.component';
 import {TopviewPlaylistsComponent} from './playlist/topview-playlists/topview-playlists.component';
 import {CommentSongComponent} from './songpage/comment-song/comment-song.component';
+import {SongMostLikeComponent} from './song-most-like/song-most-like.component';
 
 const routes: Routes = [
 
@@ -82,6 +83,12 @@ const routes: Routes = [
   }, {
   path: 'playlists/topView',
     component: TopviewPlaylistsComponent
+  }, {
+    path: 'comment/:id',
+    component: CommentSongComponent
+  }, {
+  path: 'songs/topLike',
+    component: SongMostLikeComponent
   }
 
 ];

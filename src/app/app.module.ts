@@ -38,6 +38,7 @@ import { SongMostviewComponent } from './song-mostview/song-mostview.component';
 import { TopviewPlaylistsComponent } from './playlist/topview-playlists/topview-playlists.component';
 import { PlaylistMostLikeComponent } from './playlist/playlist-most-like/playlist-most-like.component';
 import { CommentSongComponent } from './songpage/comment-song/comment-song.component';
+import { SongMostLikeComponent } from './song-most-like/song-most-like.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { CommentSongComponent } from './songpage/comment-song/comment-song.compo
     SongMostviewComponent,
     TopviewPlaylistsComponent,
     PlaylistMostLikeComponent,
-    CommentSongComponent
+    CommentSongComponent,
+    SongMostLikeComponent
   ],
   imports: [
     BrowserModule,

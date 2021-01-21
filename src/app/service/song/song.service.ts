@@ -59,5 +59,11 @@ export class SongService {
   getLikeStatus(likeSong: LikeSong){
     return this.http.get<LikeSong>(API_URL + `/songs/like/${likeSong.song.id}/user/${likeSong.user.username}`);
   }
+  getSongLikeNumber(): Observable<number[]>{
+    return this.http.get<number[]>(API_URL + `/songs/likeNumberOfSong`);
+  }
+  getTopLikeSong(): Observable<song[]>{
+    return this.http.get<song[]>(API_URL + `/songs/topLikeSong`);
+  }
 }
 
