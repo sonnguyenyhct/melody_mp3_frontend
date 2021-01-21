@@ -38,6 +38,7 @@ import { PlaylistMostLikeComponent } from './playlist/playlist-most-like/playlis
 import { CommentSongComponent } from './songpage/comment-song/comment-song.component';
 import { SongMostLikeComponent } from './song-most-like/song-most-like.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {PlayPlaylistComponent} from "./playlist/play-playlist/play-playlist.component";
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     TopviewPlaylistsComponent,
     PlaylistMostLikeComponent,
     CommentSongComponent,
-    SongMostLikeComponent
+    SongMostLikeComponent,
+    PlayPlaylistComponent
   ],
   imports: [
     BrowserModule,
