@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
   margin: 0;
   padding: 0;
 
@@ -15,16 +15,16 @@ body{
 .text-right{ text-align: right; }
 
 .comments-app{
-  margin: 50px auto;
+  margin: 20px 10px;
   max-width: 680px;
-  padding: 0 50px;
+  /*padding: 0 20px;*/
   width: 100%;
 }
 
 .comments-app h1{
   color: #191919;
   margin-bottom: 1em;
-  /*text-align: center;*/
+  text-align: center;
   text-shadow: 0 0 2px rgba(152, 152, 152, 1);
 }
 

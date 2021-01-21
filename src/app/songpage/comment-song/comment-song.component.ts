@@ -15,26 +15,20 @@ export class CommentSongComponent implements OnInit {
 
   idSong : number = -1;
   listCommentSong : CommentSong[] = [];
+  listCommentSongFull : CommentSong[] = [];
   currentUser : any;
   userDetail : userdetail = {};
   userDetailOldComment : userdetail | undefined;
   userDetails : userdetail[] = [];
   avatar : any;
   commentSong : CommentSong = {};
+  numberCommentShow = 5;
 
   constructor(private route: Router, private userDetailService : UserdetailService,private commentSongService : CommentSongService, private activatedRoute: ActivatedRoute, private authService: AuthService) {
     activatedRoute.paramMap.subscribe( async paramMap => {
       // @ts-ignore
       this.idSong = +paramMap.get('id');
-      await this.commentSongService.getListCommentSongBySongId(this.idSong).subscribe( async (list: CommentSong[]) => {
-        this.listCommentSong = list;
-        for (let i = 0; i < this.listCommentSong.length; i++) {
-          // @ts-ignore
-          this.userDetailOldComment = await this.getListUserDetailByUsername(this.listCommentSong[i].user.username);
-          this.userDetails.push(this.userDetailOldComment);
-          console.log(this.userDetailOldComment.avatar)
-        }
-      });
+      await this.getListCommentSong();
     })
   }
 
@@ -51,13 +45,27 @@ export class CommentSongComponent implements OnInit {
   getListUserDetailByUsername(username: any){
       return this.userDetailService.getUserDetailByUserName(username).toPromise();
   }
+  getListCommentSong(){
+    this.commentSongService.getListCommentSongBySongId(this.idSong).subscribe( async (list: CommentSong[]) => {
+      this.listCommentSongFull = list;
+      this.listCommentSong = this.listCommentSongFull.splice(0,this.numberCommentShow);
+      for (let i = 0; i < this.numberCommentShow; i++) {
+
+        // @ts-ignore
+        this.userDetailOldComment = await this.getListUserDetailByUsername(this.listCommentSong[i].user.username);
+        this.userDetails.push(this.userDetailOldComment);
+      }
+    });
+  }
 
   postComment(){
      this.commentSongService.postCommentSong(this.idSong,this.currentUser.username,this.commentSong).subscribe(async () =>{
-       console.log("OK")
-       await this.route.navigate(['/']);
-       await this.route.navigate(['/comment/' + this.idSong]);
-     })
+          this.getListCommentSong()
+       this.commentSong.content = ''
+       })
   }
-
+  showMore(){
+    this.numberCommentShow += 5;
+    this.getListCommentSong();
+  }
 }

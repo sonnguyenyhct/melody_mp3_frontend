@@ -1,4 +1,4 @@
-<div class="comments-app" ng-app="commentsApp" ng-controller="CommentsController as cmntCtrl">
+<div class="comments-app">
   <h1>Bình luận</h1>
 <!--  <p>&#128512;</p>-->
 
@@ -27,7 +27,8 @@
       </form>
 
     </div>
-    <div class="comment" *ngFor="let comment of listCommentSong; let i = index">
+    <h2 style="color: blue; margin-left: 5px">Mới nhất</h2>
+    <div class="comment" [(ngModel)]="listCommentSong" *ngFor="let comment of listCommentSong; let i = index">
       <!-- Comment Avatar -->
       <div class="comment-avatar">
         <img src="{{userDetails[i].avatar}}">
@@ -50,6 +51,6 @@
         </div>
       </div>
     </div>
-
+    <button type="button" (click)="showMore()" style="float: right; margin-bottom: 17px" class="btn btn-link">Xem thêm...</button>
   </div>
 </div>

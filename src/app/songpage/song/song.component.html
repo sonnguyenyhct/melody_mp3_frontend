@@ -75,9 +75,15 @@
       </tr>
       <tr>
         <td>
-          <pre style="display: inline;font-size: 13px; font-family: Helvetica, Arial, sans-serif">{{song.lyric}}</pre>
+          <pre class="lyric" *ngIf="showFullLyric" style="display: block;font-size: 13px; font-family: Helvetica, Arial, sans-serif">{{song.lyric}}</pre>
+          <pre *ngIf="!showFullLyric" style="display: inline;font-size: 13px; font-family: Helvetica, Arial, sans-serif">{{song.lyric}}</pre>
+          <br *ngIf="!showFullLyric">
+<!--          <br *ngIf="!showFullLyric">-->
+          <span><button *ngIf="showFullLyric" type="button" class="btn btn-link" (click)="collapseLyric()">Mở rộng</button></span>
+          <button *ngIf="!showFullLyric" type="button" class="btn btn-link" (click)="collapseLyric()">Thu gọn</button>
         </td>
       </tr>
+      <app-comment-song></app-comment-song>
     </table>
   </div>
   <div class="item item-2" style="font-size: 12px">
@@ -97,7 +103,7 @@
           <td>
             <div class="tooltipp">
               <div class="a">
-                <a [routerLink]="['/song/'+play.id]"><span style="font-size: 14px;color: black" class="overflow"
+                <a [href]="['/song/'+play.id]"><span style="font-size: 14px;color: black" class="overflow"
                                                            title="{{play.name}} - {{play.author}}">{{play.name}}</span></a>
               </div>
             </div>

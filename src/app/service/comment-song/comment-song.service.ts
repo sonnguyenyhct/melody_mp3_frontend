@@ -15,9 +15,6 @@ export class CommentSongService {
   constructor(private authService : AuthService,private http: HttpClient) {
     this.authService.currentUserSubject.subscribe(value => {
       this.currentUser = value;
-      if(this.currentUser){
-      }
-      /*this.currentUser.id*/
     })
   }
 
