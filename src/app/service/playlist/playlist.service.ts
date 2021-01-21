@@ -40,9 +40,12 @@ export class PlaylistService {
     return this.http.get<Playlist[]>(API_URL + `/playlists/user/${username}`);
   }
   getPlayListMostLike(): Observable<Playlist[]>{
-    return this.http.get<Playlist[]>(API_URL +`/playlists/topLike`);
+    return this.http.get<Playlist[]>(API_URL + `/playlists/topLike`);
   }
-  getTrackPlaylist(id: number): Observable<Track[]>{
+  getPlaylistLikeNumber(): Observable<number[]>{
+    return this.http.get<number[]>(API_URL + `/playlists/likeNumber`);
+  }
+  getTrackPlaylist(id: number): Observable<Track[]> {
     return this.http.get<Track[]>(API_URL + `/playlists/tracks/${id}`);
   }
 }

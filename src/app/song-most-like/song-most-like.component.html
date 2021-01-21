@@ -1,0 +1,13 @@
+<div style="margin-left: 90px" *ngFor="let song of listSongMostLike; let i = index">
+  <div class="row">
+    <div class="col-md-5" style="padding: 0">
+      <img style="" width="150px" height="150px" src="{{song.avatar}}" alt="">
+    </div>
+    <div class="col-md-7" style="margin-right: 0px">
+      <h4 style="color: blue; font-size: 18px; margin: 0"><strong>{{song.name}}</strong></h4>
+      <strong style="color: red"><i class="fas fa-heart" style="margin-right: 5px"></i>{{listNumberOfLike[i]}}</strong>
+      <div style="margin: 40px"></div>
+      <strong style="font-size: 50px; color: red">#{{i+1}}</strong>
+    </div>
+  </div>
+</div>
