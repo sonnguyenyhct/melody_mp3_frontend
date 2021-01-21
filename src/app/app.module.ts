@@ -84,7 +84,8 @@ import {PlayPlaylistComponent} from "./playlist/play-playlist/play-playlist.comp
     ReactiveFormsModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]
