@@ -9,32 +9,8 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./delete-playlist.component.css']
 })
 export class DeletePlaylistComponent implements OnInit {
-  playlist: Playlist = {};
-  id: number | undefined;
 
-  constructor(private playlistService: PlaylistService,
-              private activatedRoute: ActivatedRoute,
-              private router: Router) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe(paramMap =>{
-      // @ts-ignore
-      this.id = +paramMap.get('id');
-      this.getPlayList(this.id);
-    });
-  }
-  getPlayList(id: number){
-    this.playlistService.getPlayListById(id).subscribe(value => {
-      this.playlist = value;
-    });
-  }
-
-  deletePlayList(id: number){
-    this.playlistService.deletePlayListById(id).subscribe(() => {
-        alert('Successfully');
-        this.router.navigate(['/list-playlist']);
-      },
-      error => console.log(error));
-  }
-
+  ngOnInit(): void {}
 }
