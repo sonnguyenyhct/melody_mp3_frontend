@@ -8,6 +8,10 @@ import {PlaylistService} from "../../service/playlist/playlist.service";
 import {Playlist} from "../../model/playlist";
 import {AuthService} from "../../service/auth/auth.service";
 import {LikeSong} from "../../model/like-song";
+import {UserdetailService} from '../../service/userdetail/userdetail.service';
+import {CommentSongService} from '../../service/comment-song/comment-song.service';
+import {CommentSong} from '../../model/comment-song';
+import {userdetail} from '../../model/userdetail';
 
 @Component({
   selector: 'app-song',
@@ -22,13 +26,13 @@ export class SongComponent implements OnInit {
     }
   ];
   singers: singer[] = [];
+  showFullLyric = true;
   song: song = {
     name: '',
     file: '',
     singers: []
   };
   listTop10Songs: song[] = [];
-  idSong: number | undefined;
   idPlaylist: number | undefined;
   listPlaylist: Playlist[] = [];
   currentUser: any = {};
@@ -38,6 +42,14 @@ export class SongComponent implements OnInit {
   };
   typeButtonLike: string = '';
   titleLike: string = '';
+
+  idSong : number = -1;
+  userDetail : userdetail = {};
+  userDetailOldComment : userdetail | undefined;
+  userDetails : userdetail[] = [];
+  avatar : any;
+  commentSong : CommentSong = {};
+
   constructor(private songService: SongService,
               private activatedRoute: ActivatedRoute,
               private playListService: PlaylistService,
@@ -120,5 +132,8 @@ export class SongComponent implements OnInit {
         this.titleLike = 'un like';
       }
     })
+  }
+  collapseLyric(){
+    this.showFullLyric = !this.showFullLyric;
   }
 }
