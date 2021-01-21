@@ -75,8 +75,16 @@
       </tr>
       <tr>
         <td>
-          <pre style="display: inline;font-size: 13px; font-family: Helvetica, Arial, sans-serif">{{song.lyric}}</pre>
+          <pre class="lyric" *ngIf="showFullLyric" style="display: block;font-size: 13px; font-family: Helvetica, Arial, sans-serif">{{song.lyric}}</pre>
+          <pre *ngIf="!showFullLyric" style="display: inline;font-size: 13px; font-family: Helvetica, Arial, sans-serif">{{song.lyric}}</pre>
+          <br *ngIf="!showFullLyric">
+          <br *ngIf="!showFullLyric">
+          <button *ngIf="showFullLyric" type="button" class="btn btn-secondary" (click)="collapseLyric()">Mở rộng</button>
+          <button *ngIf="!showFullLyric" type="button" class="btn btn-secondary" (click)="collapseLyric()">Thu gọn</button>
         </td>
+      </tr>
+      <tr>
+        <app-comment-song></app-comment-song>
       </tr>
     </table>
   </div>

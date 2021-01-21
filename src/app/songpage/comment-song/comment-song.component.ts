@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CommentSongService} from '../../service/comment-song/comment-song.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {CommentSong} from '../../model/comment-song';
 import {userdetail} from '../../model/userdetail';
 import {AuthService} from '../../service/auth/auth.service';
@@ -17,16 +17,23 @@ export class CommentSongComponent implements OnInit {
   listCommentSong : CommentSong[] = [];
   currentUser : any;
   userDetail : userdetail = {};
+  userDetailOldComment : userdetail | undefined;
+  userDetails : userdetail[] = [];
   avatar : any;
+  commentSong : CommentSong = {};
 
-
-  constructor(private userDetailService : UserdetailService,private commentSongService : CommentSongService, private activatedRoute: ActivatedRoute, private authService: AuthService) {
-    activatedRoute.paramMap.subscribe(async paramMap => {
+  constructor(private route: Router, private userDetailService : UserdetailService,private commentSongService : CommentSongService, private activatedRoute: ActivatedRoute, private authService: AuthService) {
+    activatedRoute.paramMap.subscribe( async paramMap => {
+      // @ts-ignore
       this.idSong = +paramMap.get('id');
-      console.log(this.idSong)
-      await this.commentSongService.getListCommentSongBySongId(this.idSong).subscribe( list => {
+      await this.commentSongService.getListCommentSongBySongId(this.idSong).subscribe( async (list: CommentSong[]) => {
         this.listCommentSong = list;
-        console.log(this.listCommentSong.length)
+        for (let i = 0; i < this.listCommentSong.length; i++) {
+          // @ts-ignore
+          this.userDetailOldComment = await this.getListUserDetailByUsername(this.listCommentSong[i].user.username);
+          this.userDetails.push(this.userDetailOldComment);
+          console.log(this.userDetailOldComment.avatar)
+        }
       });
     })
   }
@@ -39,6 +46,18 @@ export class CommentSongComponent implements OnInit {
         this.avatar = this.userDetail.avatar;
       })
     })
+  }
+
+  getListUserDetailByUsername(username: any){
+      return this.userDetailService.getUserDetailByUserName(username).toPromise();
+  }
+
+  postComment(){
+     this.commentSongService.postCommentSong(this.idSong,this.currentUser.username,this.commentSong).subscribe(async () =>{
+       console.log("OK")
+       await this.route.navigate(['/']);
+       await this.route.navigate(['/song/' + this.idSong]);
+     })
   }
 
 }

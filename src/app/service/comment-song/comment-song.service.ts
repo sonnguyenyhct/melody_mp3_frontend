@@ -24,4 +24,7 @@ export class CommentSongService {
   getListCommentSongBySongId(songId : number): Observable<CommentSong[]>{
     return this.http.get<CommentSong[]>(API_URL + `/commentSong/${songId}`)
   }
+  postCommentSong(songId : number,username: string, commentSong : CommentSong):Observable<CommentSong>{
+    return this.http.post<CommentSong>(API_URL + `/commentSong/${songId}/${username}`,commentSong)
+  }
 }
