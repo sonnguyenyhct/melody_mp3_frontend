@@ -117,7 +117,7 @@ export class SongComponent implements OnInit {
         this.titleLike = 'Like';
       } else {
         this.typeButtonLike = 'btn btn-danger';
-        this.titleLike = 'Unlike';
+        this.titleLike = 'un like';
       }
     })
   }
