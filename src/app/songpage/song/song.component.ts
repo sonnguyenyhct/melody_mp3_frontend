@@ -7,6 +7,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {PlaylistService} from "../../service/playlist/playlist.service";
 import {Playlist} from "../../model/playlist";
 import {AuthService} from "../../service/auth/auth.service";
+import {LikeSong} from "../../model/like-song";
 
 @Component({
   selector: 'app-song',
@@ -27,16 +28,22 @@ export class SongComponent implements OnInit {
     singers: []
   };
   listTop10Songs: song[] = [];
-  idSong: any;
-  idPlaylist: any;
+  idSong: number | undefined;
+  idPlaylist: number | undefined;
   listPlaylist: Playlist[] = [];
-  currentUser: any;
-
+  currentUser: any = {};
+  likeSong: LikeSong = {
+    user: this.currentUser,
+    song: this.song
+  };
+  typeButtonLike: string = '';
+  titleLike: string = '';
   constructor(private songService: SongService,
               private activatedRoute: ActivatedRoute,
               private playListService: PlaylistService,
               private authService: AuthService) {
     this.authService.currentUserSubject.subscribe(value => {
+      this.likeSong.user = value;
       this.currentUser = value;
       this.getAllPlaylistByUsername(this.currentUser.username);
     });
@@ -44,11 +51,13 @@ export class SongComponent implements OnInit {
       // @ts-ignore
       this.idSong = +paramMap.get('id');
       this.getTrackById(this.idSong);
+      this.song.id = this.idSong;
     });
   }
 
   ngOnInit(): void {
     this.getList10SongInTopViews();
+    this.checkStatusLike(this.likeSong);
   }
 
   // tslint:disable-next-line:typedef
@@ -56,11 +65,8 @@ export class SongComponent implements OnInit {
     this.songService.getSongById(id).subscribe(value => {
       this.singleTrack[0].title = value.name + '';
       this.singleTrack[0].link = value.file + '';
-      this.singleTrack[0].title = <string> value.name;
-      this.singleTrack[0].link = <string> value.file;
-      // @ts-ignore
-      this.singers = value.singers;
       this.song = value;
+      this.likeSong.song = value;
       this.songService.addView(this.song).subscribe(value1 => {
         this.song = value1;
       });
@@ -80,7 +86,7 @@ export class SongComponent implements OnInit {
     });
   }
 
-  addSongToPlayList(idSong: any, idPlaylist: any) {
+  addSongToPlayList(idSong: number, idPlaylist: number) {
     this.playListService.addSongToPlaylist(idSong, idPlaylist).subscribe(value => {
       if (value == null) {
         alert('Đã tồn tại bài hát trong playlist');
@@ -91,54 +97,28 @@ export class SongComponent implements OnInit {
     });
   }
 
+  changeStatusLike(likeSong: LikeSong){
+    this.songService.getLikeStatus(likeSong).subscribe(value => {
+      if (value == null){
+        this.songService.addLikeSong(likeSong).subscribe(value1 => {
+          this.checkStatusLike(likeSong)
+        });
+      } else {
+        this.songService.deleteLikeSong(likeSong).subscribe(value1 => {
+          this.checkStatusLike(likeSong);
+        });
+      }
+    })
+  }
+  checkStatusLike(likeSong: LikeSong){
+    this.songService.getLikeStatus(likeSong).subscribe(value => {
+      if (value == null){
+        this.typeButtonLike = 'btn btn-outline-danger';
+        this.titleLike = 'Like';
+      } else {
+        this.typeButtonLike = 'btn btn-danger';
+        this.titleLike = 'Unlike';
+      }
+    })
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*showFullLyric = true;
-
-
-
-
-collapseLyric(){
-  this.showFullLyric = !this.showFullLyric;
-}*/
-

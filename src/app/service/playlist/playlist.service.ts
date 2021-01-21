@@ -35,11 +35,7 @@ export class PlaylistService {
     // @ts-ignore
     return this.http.post<Playlist>(API_URL + `/playlists/${idPlaylist}/songs/${idSong}`);
   }
-  getPlayListMostLike(): Observable<Playlist[]>{
-    return this.http.get<Playlist[]>(API_URL +`/playlists/topLike`)
-  }
-
-  getPlaylistByUsername(username : String): Observable<Playlist[]>{
-    return this.http.get<Playlist[]>(API_URL +`/playlists/user/{username}`)
+  getPlaylistByUsername(username: String): Observable<Playlist[]>{
+    return this.http.get<Playlist[]>(API_URL + `/playlists/user/${username}`);
   }
 }

@@ -30,8 +30,8 @@ const routes: Routes = [
   {
     path: 'createsong/:username',
     component: CreatesongComponent,
-    canActivate: [AuthGuard]
-  },
+  canActivate: [AuthGuard]
+},
   {
     path: 'listsong/:username',
     component: ListsongComponent,

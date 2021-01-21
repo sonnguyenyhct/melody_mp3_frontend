@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {song} from '../../model/song';
 import {AuthService} from '../auth/auth.service';
+import {LikeSong} from "../../model/like-song";
 const API_URL = `${environment.apiUrl}`;
 @Injectable({
   providedIn: 'root'
@@ -47,7 +48,16 @@ export class SongService {
     return this.http.get<song[]>(API_URL + `/top10views`);
   }
   addView(song: song): Observable<song>{
-    return this.http.put<song>(API_URL+`/addView/${song.id}`, song);
+    return this.http.put<song>(API_URL+`/songs/addView/${song.id}`, song);
+  }
+  addLikeSong(likeSong: LikeSong){
+    return this.http.post<LikeSong>(API_URL + `/songs/addLike/${likeSong.song.id}/user/${likeSong.user.username}`, likeSong);
+  }
+  deleteLikeSong(likeSong: LikeSong){
+    return this.http.delete<LikeSong>(API_URL + `/songs/deleteLike/${likeSong.song.id}/user/${likeSong.user.username}`);
+  }
+  getLikeStatus(likeSong: LikeSong){
+    return this.http.get<LikeSong>(API_URL + `/songs/like/${likeSong.song.id}/user/${likeSong.user.username}`);
   }
 }
 
