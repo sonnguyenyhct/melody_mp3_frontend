@@ -16,7 +16,9 @@ import {NewSongsComponent} from './songpage/new-songs/new-songs.component';
 import {TopviewPlaylistsComponent} from './playlist/topview-playlists/topview-playlists.component';
 import {CommentSongComponent} from './songpage/comment-song/comment-song.component';
 import {SongMostLikeComponent} from './song-most-like/song-most-like.component';
-import {PlayPlaylistComponent} from "./playlist/play-playlist/play-playlist.component";
+import {PlayPlaylistComponent} from './playlist/play-playlist/play-playlist.component';
+import {UpdatePlaylistComponent} from './playlist/update-playlist/update-playlist.component';
+import {SearchPlaylistComponent} from './playlist/search-playlist/search-playlist.component';
 
 const routes: Routes = [
 
@@ -63,6 +65,12 @@ const routes: Routes = [
     path: 'list-playlist/:username',
     component: ListPlaylistComponent
   }, {
+    path: 'update-playlist/:username/:id',
+    component: UpdatePlaylistComponent
+  }, {
+    path: 'searchPlaylist/:keyword',
+    component: SearchPlaylistComponent
+  }, {
     path: 'search/:keyword',
     component: SearchSongComponent
   }, {
@@ -77,7 +85,7 @@ const routes: Routes = [
   }, {
     path: 'songs/topLike',
     component: SongMostLikeComponent
-  },{
+  }, {
     path: 'playlists/display/:id',
     component: PlayPlaylistComponent
   }
