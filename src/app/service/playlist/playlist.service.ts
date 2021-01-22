@@ -5,6 +5,8 @@ import {Observable} from 'rxjs';
 import {Playlist} from '../../model/playlist';
 import {song} from '../../model/song';
 import {Track} from "ngx-audio-player";
+import {LikeSong} from "../../model/like-song";
+import {LikePlaylist} from "../../model/like-playlist";
 const API_URL = `${environment.apiUrl}`;
 @Injectable({
   providedIn: 'root'
@@ -49,7 +51,16 @@ export class PlaylistService {
     return this.http.get<Track[]>(API_URL + `/playlists/tracks/${id}`);
   }
   findAllByNameContains(keyword: string): Observable<Playlist[]> {
-    return this.http.get<Playlist[]>(API_URL + `/searchPlaylist/${keyword}`);
+    return this.http.get<Playlist[]>(API_URL + `/playlists/searchPlaylist/${keyword}`);
+  }
+  addLikePlaylist(likePlaylist: LikePlaylist){
+    return this.http.post<LikePlaylist>(API_URL + `/playlists/addLike/${likePlaylist.playlist.id}/user/${likePlaylist.user.username}`, likePlaylist);
+  }
+  deleteLikePlaylist(likePlaylist: LikePlaylist){
+    return this.http.delete<LikePlaylist>(API_URL + `/playlists/deleteLike/${likePlaylist.playlist.id}/user/${likePlaylist.user.username}`);
+  }
+  getLikeStatus(likePlaylist: LikePlaylist){
+    return this.http.get<LikePlaylist>(API_URL + `/playlists/like/${likePlaylist.playlist.id}/user/${likePlaylist.user.username}`);
   }
   deleteSongOutPlaylist(idPlaylist : number, username : String, idSong : number): Observable<song[]>{
     return this.http.delete<song[]>(API_URL + `/song-playlist/${idPlaylist}/user/${username}/delete/${idSong}`)

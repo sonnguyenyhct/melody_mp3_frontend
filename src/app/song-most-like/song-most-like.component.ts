@@ -13,6 +13,7 @@ export class SongMostLikeComponent implements OnInit {
   constructor(private songService: SongService) {
     songService.getSongLikeNumber().subscribe(listNumber => {
       this.listNumberOfLike = listNumber;
+      console.log(this.listNumberOfLike.length)
     });
   }
 
