@@ -40,8 +40,8 @@ export class SongComponent implements OnInit {
     user: this.currentUser,
     song: this.song
   };
-  typeButtonLike: string = '';
-  titleLike: string = '';
+  typeButtonLike: string = 'btn btn-outline-danger';
+  titleLike: string = 'Like';
 
   idSong : number = -1;
   userDetail : userdetail = {};
@@ -129,7 +129,7 @@ export class SongComponent implements OnInit {
         this.titleLike = 'Like';
       } else {
         this.typeButtonLike = 'btn btn-danger';
-        this.titleLike = 'un like';
+        this.titleLike = 'Unlike';
       }
     })
   }

@@ -41,6 +41,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {PlayPlaylistComponent} from "./playlist/play-playlist/play-playlist.component";
 import { ListsongPlaylistComponent } from './playlist/listsong-playlist/listsong-playlist.component';
 import {SearchPlaylistComponent} from "./playlist/search-playlist/search-playlist.component";
+import { CommentPlaylistComponent } from './comment-playlist/comment-playlist.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import {SearchPlaylistComponent} from "./playlist/search-playlist/search-playlis
     SongMostLikeComponent,
     PlayPlaylistComponent,
     ListsongPlaylistComponent,
-    SearchPlaylistComponent
+    SearchPlaylistComponent,
+    CommentPlaylistComponent
   ],
   imports: [
     BrowserModule,
