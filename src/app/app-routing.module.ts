@@ -19,6 +19,7 @@ import {SongMostLikeComponent} from './song-most-like/song-most-like.component';
 import {PlayPlaylistComponent} from './playlist/play-playlist/play-playlist.component';
 import {UpdatePlaylistComponent} from './playlist/update-playlist/update-playlist.component';
 import {SearchPlaylistComponent} from './playlist/search-playlist/search-playlist.component';
+import {ListsongPlaylistComponent} from './playlist/listsong-playlist/listsong-playlist.component';
 
 const routes: Routes = [
 
@@ -88,8 +89,10 @@ const routes: Routes = [
   }, {
     path: 'playlists/display/:id',
     component: PlayPlaylistComponent
-  }
-
+  },{
+    path: 'listsongs-playlist/:username/:id',
+    component: ListsongPlaylistComponent
+  },
 ];
 
 @NgModule({
