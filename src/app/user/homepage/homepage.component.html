@@ -75,8 +75,8 @@
         </div>
         <div class="card-body">
           <div class="btn-group" style="margin-bottom: 10px;">
-            <button style="border-radius: 5px; padding:10px 100px 10px 100px; margin-right: 40px; margin-left: 15px" type="button" (click)="songLike()" class="btn btn-outline-danger">Bài hát</button>
-            <button style="border-radius: 5px; padding:10px 100px 10px 100px" type="button" (click)="playlistLike()" class="btn btn-outline-success">Playlist</button>
+            <button style="border-radius: 5px; padding:5px 90px 5px 90px; margin-right: 20px; margin-left: 15px" type="button" (click)="songLike()" class="btn btn-outline-danger">Bàihát</button>
+            <button style="border-radius: 5px; padding:5px 90px 5px 90px" type="button" (click)="playlistLike()" class="btn btn-outline-success">Playlist</button>
           </div>
 
           <ul *ngIf="showSongLike" class="list-unstyled">
@@ -102,6 +102,49 @@
     <div class="col-md-1 d-none d-md-block">
 
     </div>
+    <div class="container-fluid mt-4">
+      <div class="row">
+        <div class="col-md-1 d-none d-md-block">
+        </div>
+        <!--- menu left -->
+        <!--
+            <div class="col-md-2 d-none d-md-block">
+              <div class="card">
+                <div class="card-header">
+                  <span class="h4">Thể loại âm nhạc</span>
+                </div>
+                <div class="card-body p-0">
+                  <div class="list-group list-group-flush">
+                    <a href="/the-loai/nhac-viet" class="list-group-item list-group-item-action"> Nhạc Việt</a>
+                    <a href="/the-loai/nhac-au-my" class="list-group-item list-group-item-action"> Nhạc Âu-Mỹ</a>
+                    <a href="/the-loai/nhac-han" class="list-group-item list-group-item-action"> Nhạc Pop</a>
+                    <a href="/the-loai/nhac-han" class="list-group-item list-group-item-action"> Nhạc Dance</a>
+                    <a href="/the-loai/nhac-han" class="list-group-item list-group-item-action"> Nhạc Hiphop</a>
+                    <a href="/the-loai/nhac-han" class="list-group-item list-group-item-action"> Nhạc Trẻ</a>
+                    <a href="/the-loai/nhac-han" class="list-group-item list-group-item-action"> Nhạc Tàu</a>
+                    <a href="/the-loai/nhac-han" class="list-group-item list-group-item-action"> Nhạc Mĩ</a>
+                    <a href="/the-loai/nhac-han" class="list-group-item list-group-item-action"> Nhạc Hàn</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        -->
+        <!-- Moi cap nhat -->
+        <div class="col-md-10">
+          <div class="card">
+            <div class="card-header">
+              <span class="h4">Yêu thích nhất</span>
+            </div>
+            <div class="card-body">
+              <app-song-most-like></app-song-most-like>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1 d-none d-md-block">
+        </div>
+      </div>
+    </div>
+
     <div class="main" style="width: 82%; height: auto; margin: 0 auto; margin-top: 20px">
           <div class="card">
             <div class="card-header">
@@ -109,48 +152,6 @@
             </div>
             <app-playlist-most-like></app-playlist-most-like>
           </div>
-    </div>
-  </div>
-</div>
-<div class="container-fluid mt-4">
-  <div class="row">
-    <div class="col-md-1 d-none d-md-block">
-    </div>
-    <!--- menu left -->
-    <!--
-        <div class="col-md-2 d-none d-md-block">
-          <div class="card">
-            <div class="card-header">
-              <span class="h4">Thể loại âm nhạc</span>
-            </div>
-            <div class="card-body p-0">
-              <div class="list-group list-group-flush">
-                <a href="/the-loai/nhac-viet" class="list-group-item list-group-item-action"> Nhạc Việt</a>
-                <a href="/the-loai/nhac-au-my" class="list-group-item list-group-item-action"> Nhạc Âu-Mỹ</a>
-                <a href="/the-loai/nhac-han" class="list-group-item list-group-item-action"> Nhạc Pop</a>
-                <a href="/the-loai/nhac-han" class="list-group-item list-group-item-action"> Nhạc Dance</a>
-                <a href="/the-loai/nhac-han" class="list-group-item list-group-item-action"> Nhạc Hiphop</a>
-                <a href="/the-loai/nhac-han" class="list-group-item list-group-item-action"> Nhạc Trẻ</a>
-                <a href="/the-loai/nhac-han" class="list-group-item list-group-item-action"> Nhạc Tàu</a>
-                <a href="/the-loai/nhac-han" class="list-group-item list-group-item-action"> Nhạc Mĩ</a>
-                <a href="/the-loai/nhac-han" class="list-group-item list-group-item-action"> Nhạc Hàn</a>
-              </div>
-            </div>
-          </div>
-        </div>
-    -->
-    <!-- Moi cap nhat -->
-    <div class="col-md-10">
-        <div class="card">
-          <div class="card-header">
-            <span class="h4">Yêu thích nhất</span>
-          </div>
-          <div class="card-body">
-            <app-song-mostview></app-song-mostview>
-          </div>
-        </div>
-    </div>
-    <div class="col-md-1 d-none d-md-block">
     </div>
   </div>
 </div>
