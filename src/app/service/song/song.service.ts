@@ -65,5 +65,8 @@ export class SongService {
   getTopLikeSong(): Observable<song[]>{
     return this.http.get<song[]>(API_URL + `/songs/topLikeSong`);
   }
+  getSongsByPlaylistId(username : string,id : number): Observable<song[]>{
+    return this.http.get<song[]>(API_URL + `/song-playlist/${id}/user/${username}`)
+  }
 }
 

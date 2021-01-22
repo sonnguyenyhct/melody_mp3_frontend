@@ -34,7 +34,7 @@
       <div class="slider slider-nav">
 
         <div *ngFor="let playlist of listPlaylistNew">
-          <a href="/">
+          <a href="playlists/display/{{playlist.id}}">
             <h3><img src="{{playlist.avatar}}" width="200px" height="200px"></h3>
             <p style="margin-left: 20px; color: black">{{playlist.name}}</p>
           </a>

@@ -35,6 +35,7 @@ export class UpdatePlaylistComponent implements OnInit {
   ngOnInit(): void {
     this.updateSuccess = false;
     this.activatedRoute.paramMap.subscribe(async paramMap => {
+      // @ts-ignore
       this.id = +paramMap.get('id');
       this.playlistService.getPlayListById(this.id).subscribe(playlist => {
         this.playlist = playlist;

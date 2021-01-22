@@ -28,7 +28,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let song of listSong; let i = index">
+                <tr *ngFor="let song of listSong; let i = index" [(ngModel)]="listSong">
                   <th scope="row">{{i+1}}</th>
                   <td><a [routerLink]="['/song/'+song.id]">{{song.name}}</a></td>
                   <td>{{song.author}}</td>
