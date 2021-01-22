@@ -189,8 +189,16 @@
                 </div>
               </div>
               <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="profile-tab">
-                <button (click)="createPlayList()" class="profile-edit-btn" name="btnAddMore">Tạo playlist</button>
-                <button (click)="listPlayList()" class="profile-edit-btn" name="btnAddMore">Xem danh sách playlist</button>
+                <div class="row" style="margin-bottom: 20px">
+                  <div class="col-md-4">
+                  </div>
+                  <div class="col-md-3">
+                    <button (click)="listPlayList()" class="profile-edit-btn" name="btnAddMore">Xem danh sách playlist</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button (click)="createPlayList()" class="profile-edit-btn" name="btnAddMore">Tạo playlist</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
