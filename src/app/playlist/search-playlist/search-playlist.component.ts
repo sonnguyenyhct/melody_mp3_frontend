@@ -14,19 +14,19 @@ export class SearchPlaylistComponent implements OnInit {
 
   constructor(private playlistService: PlaylistService,
               private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.paramMap.subscribe(paramMap => {
+    this.activatedRoute.paramMap.subscribe(async paramMap => {
       this.keyword = paramMap.get('keyword');
-      this.getListPlayList(this.keyword);
+      this.playlists = await this.getListPlayList(this.keyword);
     });
   }
 
   ngOnInit(): void {
+
   }
 
+  // tslint:disable-next-line:typedef
   getListPlayList(keyword: string){
-    this.playlistService.findAllByNameContains(keyword).subscribe(value => {
-      this.playlists = value;
-    });
+    return this.playlistService.findAllByNameContains(keyword).toPromise();
   }
 
 }

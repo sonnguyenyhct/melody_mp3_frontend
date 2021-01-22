@@ -49,6 +49,6 @@ export class PlaylistService {
     return this.http.get<Track[]>(API_URL + `/playlists/tracks/${id}`);
   }
   findAllByNameContains(keyword: string): Observable<Playlist[]> {
-    return this.http.get<Playlist[]>(API_URL + `/searchPlaylist/${keyword}`);
+    return this.http.get<Playlist[]>(API_URL + `/playlists/searchPlaylist/${keyword}`);
   }
 }
