@@ -62,6 +62,9 @@ export class PlaylistService {
   getLikeStatus(likePlaylist: LikePlaylist){
     return this.http.get<LikePlaylist>(API_URL + `/playlists/like/${likePlaylist.playlist.id}/user/${likePlaylist.user.username}`);
   }
+  addViewPlaylist(playlist: Playlist): Observable<Playlist> {
+    return this.http.put<Playlist>(API_URL + `/playlists/addView/${playlist.id}`, playlist);
+  }
   deleteSongOutPlaylist(idPlaylist : number, username : String, idSong : number): Observable<song[]>{
     return this.http.delete<song[]>(API_URL + `/song-playlist/${idPlaylist}/user/${username}/delete/${idSong}`)
   }
