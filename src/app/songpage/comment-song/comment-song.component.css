@@ -15,9 +15,9 @@ body{
 .text-right{ text-align: right; }
 
 .comments-app{
-  margin: 50px auto;
+  margin: 20px auto;
   max-width: 680px;
-  padding: 0 50px;
+  padding: 0 20px;
   width: 100%;
 }
 
