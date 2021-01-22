@@ -32,10 +32,13 @@ export class ListsongPlaylistComponent implements OnInit {
   }
   deleteSong(id : number){
     if (confirm("Bạn chắc chắn xoá bài hát khỏi playlist không ?")){
-      this.playlistService.deleteSongOutPlaylist(this.idPlaylist,this.currentUser.username, id).subscribe( song => {
-
+      this.playlistService.deleteSongOutPlaylist(this.idPlaylist,this.currentUser.username, id).subscribe( songs => {
+        this.listSong = songs;
       })
     }
+  }
+  listenSongs(){
+    this.route.navigate(['playlists/display/' + this.idPlaylist])
   }
 
 }

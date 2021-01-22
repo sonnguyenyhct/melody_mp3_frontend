@@ -51,7 +51,7 @@ export class PlaylistService {
   findAllByNameContains(keyword: string): Observable<Playlist[]> {
     return this.http.get<Playlist[]>(API_URL + `/searchPlaylist/${keyword}`);
   }
-  deleteSongOutPlaylist(idPlaylist : number, username : String, idSong : number): Observable<song>{
-    return this.http.delete<song>(API_URL + `/song-playlist/${idPlaylist}/user/${username}/delete/${idSong}`)
+  deleteSongOutPlaylist(idPlaylist : number, username : String, idSong : number): Observable<song[]>{
+    return this.http.delete<song[]>(API_URL + `/song-playlist/${idPlaylist}/user/${username}/delete/${idSong}`)
   }
 }
