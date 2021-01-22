@@ -58,6 +58,9 @@ export class PlayPlaylistComponent implements OnInit {
     this.playlistService.getPlayListById(idPlaylist).subscribe(value => {
       this.playlist = value;
       this.likePLayList.playlist = value;
+      this.playlistService.addViewPlaylist(this.playlist).subscribe(value1 => {
+        this.playlist = value1;
+      })
     })
   }
 
