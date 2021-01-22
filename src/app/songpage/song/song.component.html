@@ -15,9 +15,10 @@
     </table>
     <table width="750px">
       <tr>
-        <td width="200px"><img width="200px" height="200px" [src]="song.avatar"></td>
-        <td>
-          <center style="font-size: 20px">{{song.name}}
+        <td width="200px" style="padding: 0"><img width="200px" height="200px" [src]="song.avatar"></td>
+        <td style="background-image: url(https://anhdep.tv/attachments/dd5d8b8e6f192fd55d554cbc2edddb4f-jpeg.9863/);
+                 background-repeat: no-repeat">
+          <center style="font-size: 20px;color: black">{{song.name}}
             <br/>
             Trình bày: {{song.author}}</center>
         </td>
@@ -49,7 +50,7 @@
 
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <ng-container *ngFor="let playlist of listPlaylist">
-                  <button class="dropdown-item" (click)="addSongToPlayList(idSong,playlist.id)">{{playlist.name}}({{playlist.songs.length}})</button>
+                  <button class="dropdown-item" (click)="addSongToPlayList(idSong,playlist.id)">{{playlist.name}} ({{playlist.songs.length}})</button>
                 </ng-container>
               </div>
             </div>
